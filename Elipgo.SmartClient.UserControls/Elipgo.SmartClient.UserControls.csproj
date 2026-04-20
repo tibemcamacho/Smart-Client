@@ -1,0 +1,1461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.WinForms.85.3.130\build\CefSharp.WinForms.props" Condition="Exists('..\packages\CefSharp.WinForms.85.3.130\build\CefSharp.WinForms.props')" />
+  <Import Project="..\packages\CefSharp.Common.85.3.130\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.85.3.130\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51ED313C-5AA0-4437-A4BC-48076FC3E352}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Elipgo.SmartClient.UserControls</RootNamespace>
+    <AssemblyName>Elipgo.SmartClient.UserControls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x64'">
+    <OutputPath>bin\x64\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <OutputPath>bin\x86\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x64'">
+    <OutputPath>bin\x64\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|AnyCPU'">
+    <OutputPath>bin\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x86'">
+    <OutputPath>bin\x86\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\x64\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x86'">
+    <OutputPath>bin\x86\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Core">
+      <HintPath>..\Libraries\bunifu\Bunifu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Libraries\bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel, Version=4.6.0.0, Culture=neutral, PublicKeyToken=e7877f4675df049f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IdentityModel.4.6.0\lib\net472\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReactiveUI">
+      <HintPath>..\packages\ReactiveUI.20.1.63\lib\net472\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.15.2.22\lib\net8.0\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Vlc.DotNet.Core.3.1.0\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.3.1.0\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Vlc.DotNet.Forms.3.1.0\lib\net45\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarm\AlarmDiagnosticOfflineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticOfflineControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticOfflineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDetailDialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDetailDialog.Designer.cs">
+      <DependentUpon>AlarmDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAD\CADControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CAD\CADControl.Designer.cs">
+      <DependentUpon>CADControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientManager\ClientManagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientManager\ClientManagerControl.Designer.cs">
+      <DependentUpon>ClientManagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\SearchableDropdown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\SearchableDropdown.Designer.cs">
+      <DependentUpon>SearchableDropdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DACCF\DACCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DACCF\DACCFControl.Designer.cs">
+      <DependentUpon>DACCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementAlarmGeolocationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementAlarmGeolocationControl.designer.cs">
+      <DependentUpon>ElementAlarmGeolocationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCefMenuHandler.cs" />
+    <Compile Include="Fortigate\FortigateCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fortigate\FortigateCFControl.Designer.cs">
+      <DependentUpon>FortigateCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\DropdownItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\DropdownItems.Designer.cs">
+      <DependentUpon>DropdownItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormPagination.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormPagination.Designer.cs">
+      <DependentUpon>GenericFormPagination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\AccessControlBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\AccessControlBarControl.Designer.cs">
+      <DependentUpon>AccessControlBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaybackControls\ItemsZoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlaybackControls\ItemsZoom.Designer.cs">
+      <DependentUpon>ItemsZoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaybackControls\TimeLineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlaybackControls\TimeLineControl.Designer.cs">
+      <DependentUpon>TimeLineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaybackControls\ZoomTimeLinePlaybackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlaybackControls\ZoomTimeLinePlaybackControl.Designer.cs">
+      <DependentUpon>ZoomTimeLinePlaybackControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayMP4\PlayMP4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlayMP4\PlayMP4.Designer.cs">
+      <DependentUpon>PlayMP4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderDropDown\DropDownContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecorderDropDown\DropDownContainer.Designer.cs">
+      <DependentUpon>DropDownContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderDropDown\RecorderDropDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecorderDropDown\RecorderDropDown.Designer.cs">
+      <DependentUpon>RecorderDropDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\MouseHook.cs" />
+    <Compile Include="Shared\ShowTabBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\ShowTabBarControl.Designer.cs">
+      <DependentUpon>ShowTabBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecorderDropDown\DropDownOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecorderDropDown\DropDownOption.Designer.cs">
+      <DependentUpon>DropDownOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OcrCF\OcrCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OcrCF\OcrCFControl.Designer.cs">
+      <DependentUpon>OcrCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\HomeButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\HomeButtonControl.Designer.cs">
+      <DependentUpon>HomeButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ToastControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\ToastControl.Designer.cs">
+      <DependentUpon>ToastControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarWebControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarWebControl.Designer.cs">
+      <DependentUpon>SidebarWebControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarDdlFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarDdlFilterControl.Designer.cs">
+      <DependentUpon>SidebarDdlFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartEventCF\SmartEventCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmartEventCF\SmartEventCFControl.Designer.cs">
+      <DependentUpon>SmartEventCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyncroBack\SyncroBackControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyncroBack\SyncroBackControl.Designer.cs">
+      <DependentUpon>SyncroBackControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avl\AvlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Avl\AvlControl.Designer.cs">
+      <DependentUpon>AvlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccessControl\AccessControlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccessControl\AccessControlControl.Designer.cs">
+      <DependentUpon>AccessControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmButtonControl.Designer.cs">
+      <DependentUpon>AlarmButtonControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticAvlControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticAvlControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticAvlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticBase.Designer.cs">
+      <DependentUpon>AlarmDiagnosticBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticItemNotify.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticItemNotify.Designer.cs">
+      <DependentUpon>AlarmDiagnosticItemNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticKpiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticKpiControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticKpiControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticVideoCallControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticVideoCallControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticVideoCallControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticVideoGuardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmDiagnosticVideoGuardControl.Designer.cs">
+      <DependentUpon>AlarmDiagnosticVideoGuardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\AlarmOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\AlarmOptionsControl.Designer.cs">
+      <DependentUpon>AlarmOptionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\DiscardComments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\DiscardComments.Designer.cs">
+      <DependentUpon>DiscardComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\ItemAlarmHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\ItemAlarmHeader.Designer.cs">
+      <DependentUpon>ItemAlarmHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\ItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\ItemCard.Designer.cs">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alarm\LabelRoundCorners.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Alarm\ToolBarAlarm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\ToolBarAlarm.Designer.cs">
+      <DependentUpon>ToolBarAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookmark\AddBookmarkControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bookmark\AddBookmarkControl.Designer.cs">
+      <DependentUpon>AddBookmarkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\AddPresetFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cameras\AddPresetFormControl.Designer.cs">
+      <DependentUpon>AddPresetFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\GuardDahuaControl .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cameras\GuardDahuaControl .Designer.cs">
+      <DependentUpon>GuardDahuaControl .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\GuardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cameras\GuardControl.Designer.cs">
+      <DependentUpon>GuardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\PresetDahuaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cameras\PresetDahuaControl.Designer.cs">
+      <DependentUpon>PresetDahuaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\PresetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cameras\PresetControl.Designer.cs">
+      <DependentUpon>PresetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carrusel\CarouselControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Carrusel\CarouselControl.Designer.cs">
+      <DependentUpon>CarouselControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContextBar\ContextBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContextBar\ContextBarControl.Designer.cs">
+      <DependentUpon>ContextBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRM\CRMCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRM\CRMCFControl.Designer.cs">
+      <DependentUpon>CRMCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DialogReadOnlyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialog\DialogReadOnlyControl.Designer.cs">
+      <DependentUpon>DialogReadOnlyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DialogReadOnlyItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialog\DialogReadOnlyItemControl.Designer.cs">
+      <DependentUpon>DialogReadOnlyItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCefDownloadHandler.cs" />
+    <Compile Include="ElementContainer\ElementCameraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementCameraControl.Designer.cs">
+      <DependentUpon>ElementCameraControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementContainerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementContainerControl.Designer.cs">
+      <DependentUpon>ElementContainerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementAlarmGeomapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementAlarmGeomapControl.designer.cs">
+      <DependentUpon>ElementAlarmGeomapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementLprControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementLprControl.Designer.cs">
+      <DependentUpon>ElementLprControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementFaceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementFaceControl.Designer.cs">
+      <DependentUpon>ElementFaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementGeomapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementGeomapControl.designer.cs">
+      <DependentUpon>ElementGeomapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementIotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementIotControl.Designer.cs">
+      <DependentUpon>ElementIotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementKPIControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementKPIControl.Designer.cs">
+      <DependentUpon>ElementKPIControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ElementContainer\ElementSnapshotControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ElementContainer\ElementSnapshotControl.Designer.cs">
+      <DependentUpon>ElementSnapshotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaceCF\FaceCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaceCF\FaceCFControl.Designer.cs">
+      <DependentUpon>FaceCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaceObject\FaceElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaceObject\FaceElement.Designer.cs">
+      <DependentUpon>FaceElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaceObject\FaceElementEmpty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaceObject\FaceElementEmpty.Designer.cs">
+      <DependentUpon>FaceElementEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormNoData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormNoData.Designer.cs">
+      <DependentUpon>GenericFormNoData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Joystick\ConfigName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Joystick\ConfigName.Designer.cs">
+      <DependentUpon>ConfigName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LprCF\LprCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LprCF\LprCFControl.Designer.cs">
+      <DependentUpon>LprCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\AlarmBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\AlarmBarControl.Designer.cs">
+      <DependentUpon>AlarmBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\MainBarBaseControl.cs" />
+    <Compile Include="MainBar\EmptyBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\EmptyBarControl.Designer.cs">
+      <DependentUpon>EmptyBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\SeprobanBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\SeprobanBarControl.Designer.cs">
+      <DependentUpon>SeprobanBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\VaultBarControl.cs" />
+    <Compile Include="MainBar\VaultBarControl.Designer.cs">
+      <DependentUpon>VaultBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\PlayBackBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\PlayBackBarControl.Designer.cs">
+      <DependentUpon>PlayBackBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\VisualSearchBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\VisualSearchBarControl.Designer.cs">
+      <DependentUpon>VisualSearchBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outputs\OutputItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Outputs\OutputItems.Designer.cs">
+      <DependentUpon>OutputItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outputs\OutputPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Outputs\OutputPanelControl.Designer.cs">
+      <DependentUpon>OutputPanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outputs\OutputToggleButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Outputs\OutputToggleButton.Designer.cs">
+      <DependentUpon>OutputToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaybackControls\PlaybackControlsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlaybackControls\PlaybackControlsUserControl.Designer.cs">
+      <DependentUpon>PlaybackControlsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\ReportCFControl.Designer.cs">
+      <DependentUpon>ReportCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceCF\InvoiceCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceCF\InvoiceCFControl.Designer.cs">
+      <DependentUpon>InvoiceCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondViewCF\SecondViewCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SecondViewCF\SecondViewCFControl.Designer.cs">
+      <DependentUpon>SecondViewCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RetailCF\RetailCFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RetailCF\RetailCFControl.Designer.cs">
+      <DependentUpon>RetailCFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\ConfigGenericForm.cs" />
+    <Compile Include="GenericForm\GenericFormControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormControl.Designer.cs">
+      <DependentUpon>GenericFormControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\GenericFormItemCard.Designer.cs">
+      <DependentUpon>GenericFormItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Blueprint\ElementBlueprintControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Blueprint\ElementBlueprintControl.Designer.cs">
+      <DependentUpon>ElementBlueprintControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\FormGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Groups\FormGroups.Designer.cs">
+      <DependentUpon>FormGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstantPlayer\InstantPlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InstantPlayer\InstantPlayerControl.Designer.cs">
+      <DependentUpon>InstantPlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainBar\LiveBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainBar\LiveBarControl.Designer.cs">
+      <DependentUpon>LiveBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LprObject\LprElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LprObject\LprElement.Designer.cs">
+      <DependentUpon>LprElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\CapacityNotAvailableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\CapacityNotAvailableControl.Designer.cs">
+      <DependentUpon>CapacityNotAvailableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\ItemControl.Designer.cs">
+      <DependentUpon>ItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ItemsProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\ItemsProfile.Designer.cs">
+      <DependentUpon>ItemsProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\CustomSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\CustomSettingsControl.Designer.cs">
+      <DependentUpon>CustomSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\JoystickSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\JoystickSettings.Designer.cs">
+      <DependentUpon>JoystickSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\ResourceMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\ResourceMonitor.Designer.cs">
+      <DependentUpon>ResourceMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\UserProfileComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserProfile\UserProfileComponent.Designer.cs">
+      <DependentUpon>UserProfileComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scenes\ScenesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Scenes\ScenesControl.Designer.cs">
+      <DependentUpon>ScenesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ButtonCalendarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\ButtonCalendarControl.Designer.cs">
+      <DependentUpon>ButtonCalendarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\CalendarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\CalendarControl.Designer.cs">
+      <DependentUpon>CalendarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\DropDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\DropDown.Designer.cs">
+      <DependentUpon>DropDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericForm\GenericContentComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericForm\GenericContentComponent.Designer.cs">
+      <DependentUpon>GenericContentComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ErrorProviderExtension.cs" />
+    <Compile Include="Shared\OptionDropDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\OptionDropDown.Designer.cs">
+      <DependentUpon>OptionDropDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PopedCotainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\PopedCotainer.Designer.cs">
+      <DependentUpon>PopedCotainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PoperContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shared\PoperContainer.Designer.cs">
+      <DependentUpon>PoperContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\Element\ChekList\ItemCheckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\Element\ChekList\ItemCheckList.Designer.cs">
+      <DependentUpon>ItemCheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\Element\ChekList\PanelCheckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\Element\ChekList\PanelCheckList.Designer.cs">
+      <DependentUpon>PanelCheckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarCheckBoxControl .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarCheckBoxControl .Designer.cs">
+      <DependentUpon>SidebarCheckBoxControl .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarCheckListFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarCheckListFilterControl.Designer.cs">
+      <DependentUpon>SidebarCheckListFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarControl.Designer.cs">
+      <DependentUpon>SidebarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarFilterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarFilterControl.Designer.cs">
+      <DependentUpon>SidebarFilterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarGroupObjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarGroupObjectControl.Designer.cs">
+      <DependentUpon>SidebarGroupObjectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarObjectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarObjectControl.Designer.cs">
+      <DependentUpon>SidebarObjectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebarSelectCheckControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebarSelectCheckControl.Designer.cs">
+      <DependentUpon>SidebarSelectCheckControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sidebar\SidebaseSeparatorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sidebar\SidebaseSeparatorControl.Designer.cs">
+      <DependentUpon>SidebaseSeparatorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spinner\SpinnerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Spinner\SpinnerControl.Designer.cs">
+      <DependentUpon>SpinnerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spinner\SpinnerThreePoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Spinner\SpinnerThreePoint.Designer.cs">
+      <DependentUpon>SpinnerThreePoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vault\VaultDialogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vault\VaultDialogControl.Designer.cs">
+      <DependentUpon>VaultDialogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vault\VaultExportDialogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vault\VaultExportDialogControl.Designer.cs">
+      <DependentUpon>VaultExportDialogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vault\VaultItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vault\VaultItemCard.Designer.cs">
+      <DependentUpon>VaultItemCard.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alarm\AlarmButtonControl.resx">
+      <DependentUpon>AlarmButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticAvlControl.resx">
+      <DependentUpon>AlarmDiagnosticAvlControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticBase.resx">
+      <DependentUpon>AlarmDiagnosticBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticControl.resx">
+      <DependentUpon>AlarmDiagnosticControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticItemNotify.resx">
+      <DependentUpon>AlarmDiagnosticItemNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticKpiControl.resx">
+      <DependentUpon>AlarmDiagnosticKpiControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticOfflineControl.resx">
+      <DependentUpon>AlarmDiagnosticOfflineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticVideoCallControl.resx">
+      <DependentUpon>AlarmDiagnosticVideoCallControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDiagnosticVideoGuardControl.resx">
+      <DependentUpon>AlarmDiagnosticVideoGuardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmOptionsControl.resx">
+      <DependentUpon>AlarmOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\AlarmDetailDialog.resx">
+      <DependentUpon>AlarmDetailDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\DiscardComments.resx">
+      <DependentUpon>DiscardComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\ItemAlarmHeader.resx">
+      <DependentUpon>ItemAlarmHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\ItemCard.resx">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alarm\ToolBarAlarm.resx">
+      <DependentUpon>ToolBarAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Blueprint\ElementBlueprintControl.resx">
+      <DependentUpon>ElementBlueprintControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookmark\AddBookmarkControl.resx">
+      <DependentUpon>AddBookmarkControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAD\CADControl.resx">
+      <DependentUpon>CADControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cameras\AddPresetFormControl.resx">
+      <DependentUpon>AddPresetFormControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cameras\GuardDahuaControl .resx">
+      <DependentUpon>GuardDahuaControl .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cameras\GuardControl.resx">
+      <DependentUpon>GuardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cameras\PresetDahuaControl.resx">
+      <DependentUpon>PresetDahuaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cameras\PresetControl.resx">
+      <DependentUpon>PresetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carrusel\CarouselControl.resx">
+      <DependentUpon>CarouselControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContextBar\ContextBarControl.resx">
+      <DependentUpon>ContextBarControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementAlarmGeolocationControl.resx">
+      <DependentUpon>ElementAlarmGeolocationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementCameraControl.resx">
+      <DependentUpon>ElementCameraControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementContainerControl.resx">
+      <DependentUpon>ElementContainerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementAlarmGeomapControl.resx">
+      <DependentUpon>ElementAlarmGeomapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementLprControl.resx">
+      <DependentUpon>ElementLprControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementFaceControl.resx">
+      <DependentUpon>ElementFaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementGeomapControl.resx">
+      <DependentUpon>ElementGeomapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementIotControl.resx">
+      <DependentUpon>ElementIotControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementContainer\ElementSnapshotControl.resx">
+      <DependentUpon>ElementSnapshotControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaceObject\FaceElement.resx">
+      <DependentUpon>FaceElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaceObject\FaceElementEmpty.resx">
+      <DependentUpon>FaceElementEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm\DropdownItems.resx">
+      <DependentUpon>DropdownItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm\GenericFormNoData.resx">
+      <DependentUpon>GenericFormNoData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm\GenericFormPagination.resx">
+      <DependentUpon>GenericFormPagination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Joystick\ConfigName.resx">
+      <DependentUpon>ConfigName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\AlarmBarControl.resx">
+      <DependentUpon>AlarmBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\EmptyBarControl.resx">
+      <DependentUpon>EmptyBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\VaultBarControl.resx">
+      <DependentUpon>VaultBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\PlayBackBarControl.resx">
+      <DependentUpon>PlayBackBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\VisualSearchBarControl.resx">
+      <DependentUpon>VisualSearchBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outputs\OutputItems.resx">
+      <DependentUpon>OutputItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outputs\OutputPanelControl.resx">
+      <DependentUpon>OutputPanelControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outputs\OutputToggleButton.resx">
+      <DependentUpon>OutputToggleButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaybackControls\ItemsZoom.resx">
+      <DependentUpon>ItemsZoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaybackControls\PlaybackControlsUserControl.resx">
+      <DependentUpon>PlaybackControlsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaybackControls\ZoomTimeLinePlaybackControl.resx">
+      <DependentUpon>ZoomTimeLinePlaybackControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayMP4\PlayMP4.resx">
+      <DependentUpon>PlayMP4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorderDropDown\DropDownContainer.resx">
+      <DependentUpon>DropDownContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorderDropDown\RecorderDropDown.resx">
+      <DependentUpon>RecorderDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorderDropDown\DropDownOption.resx">
+      <DependentUpon>DropDownOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportCFControl.resx">
+      <DependentUpon>ReportCFControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceCF\InvoiceCFControl.resx">
+      <DependentUpon>InvoiceCFControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondViewCF\SecondViewCFControl.resx">
+      <DependentUpon>SecondViewCFControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetailCF\RetailCFControl.resx">
+      <DependentUpon>RetailCFControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm\GenericFormControl.resx">
+      <DependentUpon>GenericFormControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericForm\GenericFormItemCard.resx">
+      <DependentUpon>GenericFormItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\FormGroups.resx">
+      <DependentUpon>FormGroups.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstantPlayer\InstantPlayerControl.resx">
+      <DependentUpon>InstantPlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainBar\LiveBarControl.resx">
+      <DependentUpon>LiveBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LprObject\LprElement.resx">
+      <DependentUpon>LprElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DialogReadOnlyControl.resx">
+      <DependentUpon>DialogReadOnlyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DialogReadOnlyItemControl.resx">
+      <DependentUpon>DialogReadOnlyItemControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\CapacityNotAvailableControl.resx">
+      <DependentUpon>CapacityNotAvailableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\HomeButtonControl.resx">
+      <DependentUpon>HomeButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarDdlFilterControl.resx">
+      <DependentUpon>SidebarDdlFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\ItemControl.resx">
+      <DependentUpon>ItemControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\ItemsProfile.resx">
+      <DependentUpon>ItemsProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\CustomSettingsControl.resx">
+      <DependentUpon>CustomSettingsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\JoystickSettings.resx">
+      <DependentUpon>JoystickSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\ResourceMonitor.resx">
+      <DependentUpon>ResourceMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfile\UserProfileComponent.resx">
+      <DependentUpon>UserProfileComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scenes\ScenesControl.resx">
+      <DependentUpon>ScenesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\ButtonCalendarControl.resx">
+      <DependentUpon>ButtonCalendarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\CalendarControl.resx">
+      <DependentUpon>CalendarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\DropDown.resx">
+      <DependentUpon>DropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\OptionDropDown.resx">
+      <DependentUpon>OptionDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\Element\ChekList\ItemCheckList.resx">
+      <DependentUpon>ItemCheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\Element\ChekList\PanelCheckList.resx">
+      <DependentUpon>PanelCheckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarCheckBoxControl .resx">
+      <DependentUpon>SidebarCheckBoxControl .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarCheckListFilterControl.resx">
+      <DependentUpon>SidebarCheckListFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarControl.resx">
+      <DependentUpon>SidebarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarFilterControl.resx">
+      <DependentUpon>SidebarFilterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarGroupObjectControl.resx">
+      <DependentUpon>SidebarGroupObjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarObjectControl.resx">
+      <DependentUpon>SidebarObjectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebarSelectCheckControl.resx">
+      <DependentUpon>SidebarSelectCheckControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sidebar\SidebaseSeparatorControl.resx">
+      <DependentUpon>SidebaseSeparatorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spinner\SpinnerControl.resx">
+      <DependentUpon>SpinnerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vault\VaultDialogControl.resx">
+      <DependentUpon>VaultDialogControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vault\VaultExportDialogControl.resx">
+      <DependentUpon>VaultExportDialogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vault\VaultItemCard.resx">
+      <DependentUpon>VaultItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rtc-disconnected_es.png" />
+    <None Include="Resources\reconnecting_es.png" />
+    <None Include="Resources\reconnecting_en.png" />
+    <None Include="Resources\norecording_es.png" />
+    <None Include="Resources\norecording_en.png" />
+    <None Include="Resources\no-connection.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\icon-time.png" />
+    <None Include="Resources\icon-time1.png" />
+    <None Include="Resources\Images\alarm_background.png" />
+    <None Include="Resources\Images\elipse.png" />
+    <None Include="Resources\Images\icon-analitics_up-24px.png" />
+    <None Include="Resources\Images\icon-arrow_dropdown_down-24px.png" />
+    <None Include="Resources\Images\icon-back-24px.png" />
+    <None Include="Resources\Images\icon-carruseles-24px.png" />
+    <None Include="Resources\Images\icon-chevron_right-24px.png" />
+    <None Include="Resources\Images\icon-folder-24px.png" />
+    <None Include="Resources\Images\icon-help-24px.png" />
+    <None Include="Resources\Images\icon-input_state_off.png" />
+    <None Include="Resources\Images\icon-input_state_on.png" />
+    <None Include="Resources\Images\icon-location-24px.png" />
+    <None Include="Resources\Images\icon-play-24px.png" />
+    <None Include="Resources\Images\icon-select_grid-24px.png" />
+    <None Include="Resources\Images\icon-videocam-24px.png" />
+    <None Include="Resources\Images\language_en.png" />
+    <None Include="Resources\Images\language_es.png" />
+    <None Include="Resources\Images\icon-location-sidebar.png" />
+    <None Include="Properties\DataSources\Elipgo.SmartClient.Common.DTOs.DataViewGroup.datasource" />
+    <None Include="Properties\DataSources\Elipgo.SmartClient.Common.DTOs.ObjectGroupEntity.datasource" />
+    <None Include="Properties\DataSources\Elipgo.SmartClient.Common.DTOs.ScenesEntity.datasource" />
+    <None Include="Resources\Images\add-plus-button-white.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\connecting_en.png" />
+    <None Include="Resources\connecting_es.png" />
+    <None Include="Resources\disconnected_en.png" />
+    <None Include="Resources\disconnected_es.png" />
+    <Content Include="Resources\Fonts\Roboto-Black.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-BlackItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-BoldItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Italic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-LightItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-MediumItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-Thin.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Roboto-ThinItalic.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="cef.redist.x64">
+      <Version>85.3.13</Version>
+    </PackageReference>
+    <PackageReference Include="cef.redist.x86">
+      <Version>85.3.13</Version>
+    </PackageReference>
+    <PackageReference Include="CefSharp.Common">
+      <Version>85.3.130</Version>
+    </PackageReference>
+    <PackageReference Include="CefSharp.WinForms">
+      <Version>85.3.130</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.3179.45</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Encodings.Web">
+      <Version>9.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elipgo.SmartClient.Common\Elipgo.SmartClient.Common.csproj">
+      <Project>{e77ff0b5-b74a-4d95-985b-844c4bac38b8}</Project>
+      <Name>Elipgo.SmartClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elipgo.SmartClient.Drivers\Elipgo.SmartClient.Drivers.csproj">
+      <Project>{4023af78-762d-4106-b989-c54591974d23}</Project>
+      <Name>Elipgo.SmartClient.Drivers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elipgo.SmartClient.Services\Elipgo.SmartClient.Services.csproj">
+      <Project>{732180F0-7F91-44AC-B2F0-7F19A43E37FE}</Project>
+      <Name>Elipgo.SmartClient.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elipgo.SmartClient.SignalR.Connection\Elipgo.SmartClient.SignalR.Connection.csproj">
+      <Project>{b5092ffc-1ed9-4638-8682-1707f556beaa}</Project>
+      <Name>Elipgo.SmartClient.SignalR.Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elipgo.SmartClient.ViewModels\Elipgo.SmartClient.ViewModels.csproj">
+      <Project>{EB9B2271-82F8-4DDC-9EE9-34394F9A9875}</Project>
+      <Name>Elipgo.SmartClient.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\CefSharp.Common.85.3.130\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.85.3.130\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.WinForms.85.3.130\build\CefSharp.WinForms.targets" Condition="Exists('..\packages\CefSharp.WinForms.85.3.130\build\CefSharp.WinForms.targets')" />
+</Project>
