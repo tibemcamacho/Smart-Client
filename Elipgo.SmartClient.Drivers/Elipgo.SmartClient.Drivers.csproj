@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4023AF78-762D-4106-B989-C54591974D23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elipgo.SmartClient.Drivers</RootNamespace>
+    <AssemblyName>Elipgo.SmartClient.Drivers</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x64'">
+    <OutputPath>bin\x64\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <OutputPath>bin\x86\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x64'">
+    <OutputPath>bin\x64\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|AnyCPU'">
+    <OutputPath>bin\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x86'">
+    <OutputPath>bin\x86\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\x64\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x86'">
+    <OutputPath>bin\x86\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|Win32'">
+    <OutputPath>bin\Win32\QA\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AXISMEDIACONTROLLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Axis\AxInterop.AXISMEDIACONTROLLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\Libraries\bunifu\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.AXISMEDIACONTROLLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Axis\Interop.AXISMEDIACONTROLLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaBase, Version=2.0.485.0, Culture=neutral, PublicKeyToken=d264bf7150202654, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Elipgo.SmartClient\Libraries\VRec\MediaBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MediaSuite, Version=2.0.485.0, Culture=neutral, PublicKeyToken=d264bf7150202654, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Elipgo.SmartClient\Libraries\VRec\MediaSuite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.3179.45, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.3179.45\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX">
+      <HintPath>..\Elipgo.SmartClient\Libraries\Joystick\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=15.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.15.2.22\lib\netstandard2.0\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vlc.DotNet.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.3.1.0\lib\net45\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Core.Interops.3.1.0\lib\net45\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Forms, Version=3.1.0.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=MSIL">
+      <HintPath>..\packages\Vlc.DotNet.Forms.3.1.0\lib\net45\Vlc.DotNet.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbsNetSDK.cs" />
+    <Compile Include="Axis\AxisDownloadEncoder.cs" />
+    <Compile Include="Axis\AxisDownloadVisualSearch.cs" />
+    <Compile Include="Dahua351DriverFactory.cs" />
+    <Compile Include="Dahua351v10\NetSDK351v10.cs" />
+    <Compile Include="Dahua351v10\OriginalSDK.cs" />
+    <Compile Include="Dahua351v11\NetSDK351v11.cs" />
+    <Compile Include="Dahua351v11\OriginalSDK.cs" />
+    <Compile Include="Dahua351v12\NetSDK351v12.cs" />
+    <Compile Include="Dahua351v12\OriginalSDK.cs" />
+    <Compile Include="Dahua351v2\NetSDK351v2.cs" />
+    <Compile Include="Dahua351v3\NetSDK351v3.cs" />
+    <Compile Include="Dahua351v4\NetSDK351v4.cs" />
+    <Compile Include="Dahua351v4\OriginalSDK.cs" />
+    <Compile Include="Dahua351v5\NetSDK351v5.cs" />
+    <Compile Include="Dahua351v5\OriginalSDK.cs" />
+    <Compile Include="Dahua351v6\NetSDK351v6.cs" />
+    <Compile Include="Dahua351v6\OriginalSDK.cs" />
+    <Compile Include="Dahua351v7\NetSDK351v7.cs" />
+    <Compile Include="Dahua351v7\OriginalSDK.cs" />
+    <Compile Include="Dahua351v8\NetSDK351v8.cs" />
+    <Compile Include="Dahua351v8\OriginalSDK.cs" />
+    <Compile Include="Dahua351v9\NetSDK351v9.cs" />
+    <Compile Include="Dahua351v9\OriginalSDK.cs" />
+    <Compile Include="Dahua351\DahuaDownloadVisualSearch.cs" />
+    <Compile Include="Dahua351\NetSDK351.cs" />
+    <Compile Include="Dahua352\DahuaDownloadVisualSearch.cs" />
+    <Compile Include="DriverFactoryNetSDK.cs" />
+    <Compile Include="DriverMetaData.cs" />
+    <Compile Include="GenericDriver\AxisLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericDriver\AxisLiveUserControl.Designer.cs">
+      <DependentUpon>AxisLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\AxisDownload.cs" />
+    <Compile Include="Axis\AxisInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\AxisInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>AxisInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\AxisLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Axis\AxisLiveUserControl.Designer.cs">
+      <DependentUpon>AxisLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Axis\Recording.cs" />
+    <Compile Include="Dahua351v2\OriginalSDK.cs" />
+    <Compile Include="Dahua351v3\OriginalSDK.cs" />
+    <Compile Include="Dahua351\DahuaDownload.cs" />
+    <Compile Include="Dahua351\DahuaFullscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dahua351\DahuaFullscreen.Designer.cs">
+      <DependentUpon>DahuaFullscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua351\DahuaLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dahua351\DahuaLiveUserControl.Designer.cs">
+      <DependentUpon>DahuaLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua351\DahuaInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dahua351\DahuaInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>DahuaInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua351\NetSDK.cs" />
+    <Compile Include="Dahua351\NetSDKStruct.cs" />
+    <Compile Include="Dahua351\OriginalSDK.cs" />
+    <Compile Include="Dahua352\DahuaDownload.cs" />
+    <Compile Include="Dahua352\DahuaFullscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dahua352\DahuaFullscreen.Designer.cs">
+      <DependentUpon>DahuaFullscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua352\DahuaInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dahua352\DahuaInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>DahuaInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua352\DahuaLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dahua352\DahuaLiveUserControl.Designer.cs">
+      <DependentUpon>DahuaLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dahua352\NetSDK.cs" />
+    <Compile Include="Dahua352\NetSDKStruct.cs" />
+    <Compile Include="Dahua352\OriginalSDK.cs" />
+    <Compile Include="DriverFactory.cs" />
+    <Compile Include="GenericDriver\VlcLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericDriver\VlcLiveUserControl.Designer.cs">
+      <DependentUpon>VlcLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCNet616\CHCNetSDK.cs" />
+    <Compile Include="HCNet616\HikvisionDownload.cs" />
+    <Compile Include="HCNet616\HikVisionDownloadVisualSearch.cs" />
+    <Compile Include="HCNet616\HikvisionHelper.cs" />
+    <Compile Include="HCNet616\HikvisionLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCNet616\HikvisionLiveUserControl.Designer.cs">
+      <DependentUpon>HikvisionLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCNet616\HikvisionInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCNet616\HikvisionInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>HikvisionInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCNet619\CHCNetSDK.cs" />
+    <Compile Include="HCNet619\HikvisionDownload.cs" />
+    <Compile Include="HCNet619\HikVisionDownloadVisualSearch.cs" />
+    <Compile Include="HCNet619\HikvisionHelper.cs" />
+    <Compile Include="HCNet619\HikvisionInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCNet619\HikvisionInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>HikvisionInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HCNet619\HikvisionLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCNet619\HikvisionLiveUserControl.Designer.cs">
+      <DependentUpon>HikvisionLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDriverDownload.cs" />
+    <Compile Include="IDriverDownloadVisualSearch.cs" />
+    <Compile Include="IDriverFactory.cs" />
+    <Compile Include="IDriverInstantPlayback.cs" />
+    <Compile Include="IDriverLive.cs" />
+    <Compile Include="IMultiDownloadBookmarks.cs" />
+    <Compile Include="Joystick\COMJoystick.cs" />
+    <Compile Include="Joystick\DriverFactoryJoystinck.cs" />
+    <Compile Include="Joystick\IDriverFactoryJoystick.cs" />
+    <Compile Include="Joystick\IDriverJoystick.cs" />
+    <Compile Include="Joystick\JoystickConfiguration.cs" />
+    <Compile Include="Joystick\SequencingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Joystick\SequencingUserControl.Designer.cs">
+      <DependentUpon>SequencingUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurento\KurentoInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kurento\KurentoInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>KurentoInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurento\KurentoLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Kurento\KurentoLiveUserControl.Designer.cs">
+      <DependentUpon>KurentoLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl.cs" />
+    <Compile Include="MetaDriver.cs" />
+    <Compile Include="ONVIF\AbsOnvif.cs" />
+    <Compile Include="ONVIF\OnvifLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ONVIF\OnvifLiveUserControl.Designer.cs">
+      <DependentUpon>OnvifLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ONVIF\Onvifv1.cs" />
+    <Compile Include="ONVIF\Onvifv2.cs" />
+    <Compile Include="ONVIF\Onvifv3.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Joystick\PtzUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Joystick\PtzUserControl.Designer.cs">
+      <DependentUpon>PtzUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reconnecting.cs" />
+    <Compile Include="StreamSwitcher.cs" />
+    <Compile Include="SyncServer\SyncServerDownload.cs" />
+    <Compile Include="SyncServer\Recordings.cs" />
+    <Compile Include="Joystick\USBJoystick.cs" />
+    <Compile Include="UNVNet231\NETSDKHelper.cs" />
+    <Compile Include="UNVNet231\UniviewDownload.cs" />
+    <Compile Include="UNVNet231\UniviewDownloadVisualSearch.cs" />
+    <Compile Include="UNVNet231\UniviewFullscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UNVNet231\UniviewFullscreen.Designer.cs">
+      <DependentUpon>UniviewFullscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UNVNet231\UniviewInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UNVNet231\UniviewInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>UniviewInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UNVNet231\UniviewLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UNVNet231\UniviewLiveUserControl.Designer.cs">
+      <DependentUpon>UniviewLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UNVNet260\NETSDKHelper.cs" />
+    <Compile Include="UNVNet260\UniviewDownload.cs" />
+    <Compile Include="UNVNet260\UniviewInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UNVNet260\UniviewInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>UniviewInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UNVNet260\UniviewLiveUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UNVNet260\UniviewLiveUserControl.Designer.cs">
+      <DependentUpon>UniviewLiveUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoConversorServices.cs" />
+    <Compile Include="SyncServer\SyncServerInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyncServer\SyncServerInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>SyncServerInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VRec5\DownloadMeta.cs" />
+    <Compile Include="VRec5\VidMeta.cs" />
+    <Compile Include="VRec5\VRec5Download.cs" />
+    <Compile Include="VRec5\VRec5InstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VRec5\VRec5InstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>VRec5InstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vrec\DVRPlay\SpeechAudioDecoder.cs" />
+    <Compile Include="Vrec\Response\VrecJobResponse.cs" />
+    <Compile Include="Vrec\Response\VrecProgressResponse.cs" />
+    <Compile Include="Vrec\Response\VrecResponse.cs" />
+    <Compile Include="Vrec\VrecDownload.cs" />
+    <Compile Include="Vrec\VRecInstantPlaybackUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vrec\VRecInstantPlaybackUserControl.Designer.cs">
+      <DependentUpon>VRecInstantPlaybackUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vrec\CodecDefinitions.cs" />
+    <Compile Include="Vrec\Codecs\Decoder_H264.cs" />
+    <Compile Include="Vrec\DVRPlay\VideoClient.cs" />
+    <Compile Include="Vrec\Frame.cs" />
+    <Compile Include="Vrec\PlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vrec\PlayerControl.designer.cs">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PlayerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GenericDriver\AxisLiveUserControl.resx">
+      <DependentUpon>AxisLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\AxisInstantPlaybackUserControl.resx">
+      <DependentUpon>AxisInstantPlaybackUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Axis\AxisLiveUserControl.resx">
+      <DependentUpon>AxisLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua351\DahuaFullscreen.resx">
+      <DependentUpon>DahuaFullscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua351\DahuaLiveUserControl.resx">
+      <DependentUpon>DahuaLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua351\DahuaInstantPlaybackUserControl.resx">
+      <DependentUpon>DahuaInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua352\DahuaFullscreen.resx">
+      <DependentUpon>DahuaFullscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua352\DahuaInstantPlaybackUserControl.resx">
+      <DependentUpon>DahuaInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dahua352\DahuaLiveUserControl.resx">
+      <DependentUpon>DahuaLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericDriver\VlcLiveUserControl.resx">
+      <DependentUpon>VlcLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCNet616\HikvisionInstantPlaybackUserControl.resx">
+      <DependentUpon>HikvisionInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCNet616\HikvisionLiveUserControl.resx">
+      <DependentUpon>HikvisionLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCNet619\HikvisionInstantPlaybackUserControl.resx">
+      <DependentUpon>HikvisionInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HCNet619\HikvisionLiveUserControl.resx">
+      <DependentUpon>HikvisionLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Joystick\SequencingUserControl.resx">
+      <DependentUpon>SequencingUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kurento\KurentoInstantPlaybackUserControl.resx">
+      <DependentUpon>KurentoInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kurento\KurentoLiveUserControl.resx">
+      <DependentUpon>KurentoLiveUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ONVIF\OnvifLiveUserControl.resx">
+      <DependentUpon>OnvifLiveUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Joystick\PtzUserControl.resx">
+      <DependentUpon>PtzUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyncServer\SyncServerInstantPlaybackUserControl.resx">
+      <DependentUpon>SyncServerInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UNVNet231\UniviewInstantPlaybackUserControl.resx">
+      <DependentUpon>UniviewInstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VRec5\VRec5InstantPlaybackUserControl.resx">
+      <DependentUpon>VRec5InstantPlaybackUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vrec\VRecInstantPlaybackUserControl.resx">
+      <DependentUpon>VRecInstantPlaybackUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GenericDriver\AxInterop.AXISMEDIACONTROLLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GenericDriver\Interop.AXISMEDIACONTROLLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Axis\AxInterop.AXISMEDIACONTROLLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Axis\Interop.AXISMEDIACONTROLLib.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\add.png" />
+    <None Include="Resources\disconnected_es.png" />
+    <None Include="Resources\reconnecting_es.png" />
+    <None Include="Resources\norecording_es.png" />
+    <None Include="Resources\rtc-disconnected_es.png" />
+    <None Include="Resources\connecting_es.png" />
+    <None Include="Resources\reconnecting_en.png" />
+    <None Include="Resources\disconnected_en.png" />
+    <None Include="Resources\norecording_en.png" />
+    <None Include="Resources\connecting_en.png" />
+    <Content Include="Vrec\bmp\backwardOff.bmp" />
+    <Content Include="Vrec\bmp\backwardOn.bmp" />
+    <Content Include="Vrec\bmp\connected.bmp" />
+    <Content Include="Vrec\bmp\connecting.bmp" />
+    <Content Include="Vrec\bmp\disconnected.bmp" />
+    <Content Include="Vrec\bmp\forwardOff.bmp" />
+    <Content Include="Vrec\bmp\forwardOn.bmp" />
+    <Content Include="Vrec\bmp\notFrames.bmp" />
+    <Content Include="Vrec\bmp\pauseOff.bmp" />
+    <Content Include="Vrec\bmp\pauseOn.bmp" />
+    <Content Include="Vrec\bmp\playOff.bmp" />
+    <Content Include="Vrec\bmp\playOn.bmp" />
+    <Content Include="Vrec\bmp\stopOff.bmp" />
+    <Content Include="Vrec\bmp\stopOn.bmp" />
+    <Content Include="Vrec\bmp\trackCursor.bmp" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PlayerService\PlayerService.disco" />
+    <None Include="Resources\no-connection.png" />
+    <None Include="Web References\PlayerService\PlayerService.wsdl" />
+    <None Include="Web References\PlayerService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elipgo.SmartClient.Common\Elipgo.SmartClient.Common.csproj">
+      <Project>{e77ff0b5-b74a-4d95-985b-844c4bac38b8}</Project>
+      <Name>Elipgo.SmartClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Elipgo.SmartClient.Services\Elipgo.SmartClient.Services.csproj">
+      <Project>{732180F0-7F91-44AC-B2F0-7F19A43E37FE}</Project>
+      <Name>Elipgo.SmartClient.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.0.5.13/WSNDVR/PlayerService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PlayerService\</RelPath>
+      <UpdateFromURL>http://10.0.5.13/WSNDVR/PlayerService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Elipgo_SmartClient_Drivers_PlayerService_PlayerService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.85.3.13\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.85.3.13\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3179.45\build\Microsoft.Web.WebView2.targets')" />
+</Project>

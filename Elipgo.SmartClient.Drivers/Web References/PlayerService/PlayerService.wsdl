@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ndvr.elipgo.com/player" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ndvr.elipgo.com/player" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ndvr.elipgo.com/player">
+      <s:element name="RequestVideoPreParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestVideoPreParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestVideoPreParameterResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="portTransfer" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestVideoPostParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestVideoPostParameterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestVideoPostParameterResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="frameCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="timeLine" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartVideoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="StopVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopVideoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PauseVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PauseVideoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CloseVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseVideoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetVideoFramePosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="position" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVideoFramePositionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetVideoTimePosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="seekDateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVideoTimePositionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetVideoSkipRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVideoSkipRateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVideoTimeline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clientId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVideoTimelineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVideoTimelineResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSmartSearchMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSmartSearchModeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSmartSearchArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="left" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="top" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSmartSearchAreaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSmartSearchThresholds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="delta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vol" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSmartSearchThresholdsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetSmartSearchOverlay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="show" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="red" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="green" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="blue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSmartSearchOverlayResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="StartOfflineSmartSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="end" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="deltaSeconds" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roiX" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roiY" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roiW" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roiH" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="thDelta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="thVol" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartOfflineSmartSearchResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AbortOfflineSmartSearch">
+        <s:complexType />
+      </s:element>
+      <s:element name="AbortOfflineSmartSearchResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOfflineSmartSearchResults">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOfflineSmartSearchResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOfflineSmartSearchResultsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsOfflineSmartSearchComplete">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsOfflineSmartSearchCompleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsOfflineSmartSearchCompleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfflineSmartSearchProgress">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOfflineSmartSearchProgressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOfflineSmartSearchProgressResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestVideoPreParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestVideoPreParameter" />
+  </wsdl:message>
+  <wsdl:message name="RequestVideoPreParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestVideoPreParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestVideoPostParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestVideoPostParameter" />
+  </wsdl:message>
+  <wsdl:message name="RequestVideoPostParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestVideoPostParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:StartVideo" />
+  </wsdl:message>
+  <wsdl:message name="StartVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:StartVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:StopVideo" />
+  </wsdl:message>
+  <wsdl:message name="StopVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:StopVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PauseVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:PauseVideo" />
+  </wsdl:message>
+  <wsdl:message name="PauseVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:PauseVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseVideo" />
+  </wsdl:message>
+  <wsdl:message name="CloseVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoFramePositionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetVideoFramePosition" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoFramePositionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetVideoFramePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoTimePositionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetVideoTimePosition" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoTimePositionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetVideoTimePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoSkipRateSoapIn">
+    <wsdl:part name="parameters" element="tns:SetVideoSkipRate" />
+  </wsdl:message>
+  <wsdl:message name="SetVideoSkipRateSoapOut">
+    <wsdl:part name="parameters" element="tns:SetVideoSkipRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoTimelineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVideoTimeline" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoTimelineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVideoTimelineResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchModeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchMode" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchModeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchArea" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchThresholdsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchThresholds" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchThresholdsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchThresholdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchOverlaySoapIn">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchOverlay" />
+  </wsdl:message>
+  <wsdl:message name="SetSmartSearchOverlaySoapOut">
+    <wsdl:part name="parameters" element="tns:SetSmartSearchOverlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartOfflineSmartSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:StartOfflineSmartSearch" />
+  </wsdl:message>
+  <wsdl:message name="StartOfflineSmartSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:StartOfflineSmartSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="AbortOfflineSmartSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:AbortOfflineSmartSearch" />
+  </wsdl:message>
+  <wsdl:message name="AbortOfflineSmartSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:AbortOfflineSmartSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfflineSmartSearchResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfflineSmartSearchResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOfflineSmartSearchResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfflineSmartSearchResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsOfflineSmartSearchCompleteSoapIn">
+    <wsdl:part name="parameters" element="tns:IsOfflineSmartSearchComplete" />
+  </wsdl:message>
+  <wsdl:message name="IsOfflineSmartSearchCompleteSoapOut">
+    <wsdl:part name="parameters" element="tns:IsOfflineSmartSearchCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfflineSmartSearchProgressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfflineSmartSearchProgress" />
+  </wsdl:message>
+  <wsdl:message name="GetOfflineSmartSearchProgressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfflineSmartSearchProgressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PlayerServiceSoap">
+    <wsdl:operation name="RequestVideoPreParameter">
+      <wsdl:input message="tns:RequestVideoPreParameterSoapIn" />
+      <wsdl:output message="tns:RequestVideoPreParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestVideoPostParameter">
+      <wsdl:input message="tns:RequestVideoPostParameterSoapIn" />
+      <wsdl:output message="tns:RequestVideoPostParameterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartVideo">
+      <wsdl:input message="tns:StartVideoSoapIn" />
+      <wsdl:output message="tns:StartVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopVideo">
+      <wsdl:input message="tns:StopVideoSoapIn" />
+      <wsdl:output message="tns:StopVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PauseVideo">
+      <wsdl:input message="tns:PauseVideoSoapIn" />
+      <wsdl:output message="tns:PauseVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseVideo">
+      <wsdl:input message="tns:CloseVideoSoapIn" />
+      <wsdl:output message="tns:CloseVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoFramePosition">
+      <wsdl:input message="tns:SetVideoFramePositionSoapIn" />
+      <wsdl:output message="tns:SetVideoFramePositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoTimePosition">
+      <wsdl:input message="tns:SetVideoTimePositionSoapIn" />
+      <wsdl:output message="tns:SetVideoTimePositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoSkipRate">
+      <wsdl:input message="tns:SetVideoSkipRateSoapIn" />
+      <wsdl:output message="tns:SetVideoSkipRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoTimeline">
+      <wsdl:input message="tns:GetVideoTimelineSoapIn" />
+      <wsdl:output message="tns:GetVideoTimelineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchMode">
+      <wsdl:input message="tns:SetSmartSearchModeSoapIn" />
+      <wsdl:output message="tns:SetSmartSearchModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchArea">
+      <wsdl:input message="tns:SetSmartSearchAreaSoapIn" />
+      <wsdl:output message="tns:SetSmartSearchAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchThresholds">
+      <wsdl:input message="tns:SetSmartSearchThresholdsSoapIn" />
+      <wsdl:output message="tns:SetSmartSearchThresholdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchOverlay">
+      <wsdl:input message="tns:SetSmartSearchOverlaySoapIn" />
+      <wsdl:output message="tns:SetSmartSearchOverlaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartOfflineSmartSearch">
+      <wsdl:input message="tns:StartOfflineSmartSearchSoapIn" />
+      <wsdl:output message="tns:StartOfflineSmartSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AbortOfflineSmartSearch">
+      <wsdl:input message="tns:AbortOfflineSmartSearchSoapIn" />
+      <wsdl:output message="tns:AbortOfflineSmartSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchResults">
+      <wsdl:input message="tns:GetOfflineSmartSearchResultsSoapIn" />
+      <wsdl:output message="tns:GetOfflineSmartSearchResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOfflineSmartSearchComplete">
+      <wsdl:input message="tns:IsOfflineSmartSearchCompleteSoapIn" />
+      <wsdl:output message="tns:IsOfflineSmartSearchCompleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchProgress">
+      <wsdl:input message="tns:GetOfflineSmartSearchProgressSoapIn" />
+      <wsdl:output message="tns:GetOfflineSmartSearchProgressSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PlayerServiceSoap" type="tns:PlayerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestVideoPreParameter">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/RequestVideoPreParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVideoPostParameter">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/RequestVideoPostParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartVideo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/StartVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopVideo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/StopVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PauseVideo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/PauseVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseVideo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/CloseVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoFramePosition">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetVideoFramePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoTimePosition">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetVideoTimePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoSkipRate">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetVideoSkipRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoTimeline">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/GetVideoTimeline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchMode">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchArea">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchThresholds">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchThresholds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchOverlay">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchOverlay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartOfflineSmartSearch">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/StartOfflineSmartSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbortOfflineSmartSearch">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/AbortOfflineSmartSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchResults">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/GetOfflineSmartSearchResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOfflineSmartSearchComplete">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/IsOfflineSmartSearchComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchProgress">
+      <soap:operation soapAction="http://ndvr.elipgo.com/player/GetOfflineSmartSearchProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PlayerServiceSoap12" type="tns:PlayerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestVideoPreParameter">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/RequestVideoPreParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVideoPostParameter">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/RequestVideoPostParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartVideo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/StartVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopVideo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/StopVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PauseVideo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/PauseVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseVideo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/CloseVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoFramePosition">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetVideoFramePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoTimePosition">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetVideoTimePosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVideoSkipRate">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetVideoSkipRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoTimeline">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/GetVideoTimeline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchMode">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchArea">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchThresholds">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchThresholds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSmartSearchOverlay">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/SetSmartSearchOverlay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartOfflineSmartSearch">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/StartOfflineSmartSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbortOfflineSmartSearch">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/AbortOfflineSmartSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchResults">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/GetOfflineSmartSearchResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOfflineSmartSearchComplete">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/IsOfflineSmartSearchComplete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineSmartSearchProgress">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/player/GetOfflineSmartSearchProgress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PlayerService">
+    <wsdl:port name="PlayerServiceSoap" binding="tns:PlayerServiceSoap">
+      <soap:address location="http://10.0.5.13/WSNDVR/PlayerService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PlayerServiceSoap12" binding="tns:PlayerServiceSoap12">
+      <soap12:address location="http://10.0.5.13/WSNDVR/PlayerService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
