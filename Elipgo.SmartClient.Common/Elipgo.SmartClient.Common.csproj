@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E77FF0B5-B74A-4D95-985B-844C4BAC38B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elipgo.SmartClient.Common</RootNamespace>
+    <AssemblyName>Elipgo.SmartClient.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x64'">
+    <OutputPath>bin\x64\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <OutputPath>bin\x86\Development\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|AnyCPU'">
+    <OutputPath>bin\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x64'">
+    <OutputPath>bin\x64\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Preprod|x86'">
+    <OutputPath>bin\x86\Preprod\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\x64\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x86'">
+    <OutputPath>bin\x86\QA\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.3.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Sentry, Version=5.0.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.5.0.1\lib\net462\Sentry.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.10.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.9.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.9.0.0\lib\net462\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoundObject.cs" />
+    <Compile Include="BridgeObject.cs" />
+    <Compile Include="Connected Services\VRec4Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DTOs\ActionCommand.cs" />
+    <Compile Include="DTOs\ACServerDTO.cs" />
+    <Compile Include="DTOs\AlarmGeoMapDTO.cs" />
+    <Compile Include="DTOs\AlarmWorkflowDTO.cs" />
+    <Compile Include="DTOs\AppAuthorizationEntity.cs" />
+    <Compile Include="DTOs\ApplicationEntitiesDTO.cs" />
+    <Compile Include="DTOs\AppSettings.cs" />
+    <Compile Include="DTOs\AuditDTO.cs" />
+    <Compile Include="DTOs\BlueprintDTO.cs" />
+    <Compile Include="DTOs\BlueprintElementDTO.cs" />
+    <Compile Include="DTOs\BookmarkFilterDTO.cs" />
+    <Compile Include="DTOs\BookmarkGroupByPageDTO.cs" />
+    <Compile Include="DTOs\EncodeAxisDTO.cs" />
+    <Compile Include="DTOs\GridElement.cs" />
+    <Compile Include="DTOs\LastLoginDTO.cs" />
+    <Compile Include="DTOs\PagedReportDTO.cs" />
+    <Compile Include="DTOs\Recording.cs" />
+    <Compile Include="DTOs\TestDeviceFeatureRecordDTO.cs" />
+    <Compile Include="DTOs\TestDeviceFeatureAvailableDTO.cs" />
+    <Compile Include="DTOs\DataGridThreeValuesBookmarkGroup.cs" />
+    <Compile Include="DTOs\DataViewBookmark.cs" />
+    <Compile Include="DTOs\DataViewGuard.cs" />
+    <Compile Include="DTOs\DataViewCarousel.cs" />
+    <Compile Include="DTOs\DataViewScenes.cs" />
+    <Compile Include="DTOs\DataGroupsByTypeDTO.cs" />
+    <Compile Include="DTOs\DataViewGroup.cs" />
+    <Compile Include="DBFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTOs\AlarmDTO.cs" />
+    <Compile Include="DTOs\CardDTO.cs" />
+    <Compile Include="DTOs\CarouselDTO.cs" />
+    <Compile Include="DTOs\DeviceFeatureDTO.cs" />
+    <Compile Include="DTOs\EmailNotifyDTO.cs" />
+    <Compile Include="DTOs\FaceAlarmsDTO.cs" />
+    <Compile Include="DTOs\FilterDTO.cs" />
+    <Compile Include="DTOs\GenericFormDTO.cs" />
+    <Compile Include="DTOs\CameraDTO.cs" />
+    <Compile Include="DTOs\DialogReadOnlyItemDTO.cs" />
+    <Compile Include="DTOs\BookmarkGroupDTO.cs" />
+    <Compile Include="DTOs\BookmarkGroupElementDTO.cs" />
+    <Compile Include="DTOs\CatalogDTO.cs" />
+    <Compile Include="DTOs\CheckElementDTO.cs" />
+    <Compile Include="DTOs\GridFilterDTO.cs" />
+    <Compile Include="DTOs\GuardDTO.cs" />
+    <Compile Include="DTOs\IdentityResultDTO.cs" />
+    <Compile Include="DTOs\IElementGroup.cs" />
+    <Compile Include="DTOs\IotDTO.cs" />
+    <Compile Include="DTOs\LprAlarmDTO.cs" />
+    <Compile Include="DTOs\LprSnapshotDTO.cs" />
+    <Compile Include="DTOs\MapConfigDTO.cs" />
+    <Compile Include="DTOs\MapVisualSearchDTO.cs" />
+    <Compile Include="DTOs\ObjectGroupElementEntity.cs" />
+    <Compile Include="DTOs\ObjectGroupEntiy.cs" />
+    <Compile Include="DTOs\KpiDTO.cs" />
+    <Compile Include="DTOs\ObjectStateFilter.cs" />
+    <Compile Include="DTOs\GridsDTO.cs" />
+    <Compile Include="DTOs\OptionItemDTO.cs" />
+    <Compile Include="DTOs\OptionObjectDTO.cs" />
+    <Compile Include="DTOs\LiveBarItemDTO.cs" />
+    <Compile Include="DTOs\PageDTO.cs" />
+    <Compile Include="DTOs\PresetDTO.cs" />
+    <Compile Include="DTOs\QueueBookmarksDTO.cs" />
+    <Compile Include="DTOs\RecorderDTO.cs" />
+    <Compile Include="DTOs\SceneElementEntity.cs" />
+    <Compile Include="DTOs\ScenesEntity.cs" />
+    <Compile Include="DTOs\SequencingDTO.cs" />
+    <Compile Include="DTOs\SidebarElementDTO.cs" />
+    <Compile Include="DTOs\SidebarGroupElementDTO.cs" />
+    <Compile Include="DTOs\SiteCatalogVscDTO.cs" />
+    <Compile Include="DTOs\SyncServerDTO.cs" />
+    <Compile Include="DTOs\SyncServerRecordersDTO.cs" />
+    <Compile Include="DTOs\SiteDTO.cs" />
+    <Compile Include="DTOs\TimelineDTO.cs" />
+    <Compile Include="DTOs\UserChangePasswordDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+    <Compile Include="DTOs\UsersDTO.cs" />
+    <Compile Include="DTOs\UsersNotifyAlarmDTO.cs" />
+    <Compile Include="DTOs\UsersTokenDTO.cs" />
+    <Compile Include="DTOs\VaultItemCardDTO.cs" />
+    <Compile Include="DTOs\Vrec5ChunkList.cs" />
+    <Compile Include="Enum\ActionScenes.cs" />
+    <Compile Include="Enum\Apps.cs" />
+    <Compile Include="Enum\AuditAction.cs" />
+    <Compile Include="Enum\LprTags.cs" />
+    <Compile Include="Enum\RetailVersion.cs" />
+    <Compile Include="Enum\VaultItemCardState.cs" />
+    <Compile Include="Enum\ButtonOrAxis.cs" />
+    <Compile Include="Enum\ButtonsPlayBackBar.cs" />
+    <Compile Include="Enum\ChannelType.cs" />
+    <Compile Include="Enum\Drivers.cs" />
+    <Compile Include="Enum\GlobalJoystickSetting.cs" />
+    <Compile Include="Enum\IOPortState.cs" />
+    <Compile Include="Enum\FontName.cs" />
+    <Compile Include="Enum\Joystick.cs" />
+    <Compile Include="Enum\MediaType.cs" />
+    <Compile Include="Enum\PlaybackState.cs" />
+    <Compile Include="Enum\PlayMode.cs" />
+    <Compile Include="Enum\PlaySpeed.cs" />
+    <Compile Include="Enum\Profiles.cs" />
+    <Compile Include="Enum\MoveOperations.cs" />
+    <Compile Include="Enum\Manufacturers.cs" />
+    <Compile Include="Enum\ButtonsContextBar.cs" />
+    <Compile Include="Enum\DeviceStatus.cs" />
+    <Compile Include="Enum\ElementSidebar.cs" />
+    <Compile Include="Enum\Enums.cs" />
+    <Compile Include="Enum\ElementType.cs" />
+    <Compile Include="Enum\PtzCommand.cs" />
+    <Compile Include="Enum\PtzMovement.cs" />
+    <Compile Include="Enum\RecorderType.cs" />
+    <Compile Include="Enum\UnitTime.cs" />
+    <Compile Include="Enum\Vault.cs" />
+    <Compile Include="Enum\VRecLastOperationResult.cs" />
+    <Compile Include="Helpers\AutoClosingMessageBoxHelper.cs" />
+    <Compile Include="Helpers\Dahua351Helper.cs" />
+    <Compile Include="Helpers\DigestAuthFixer.cs" />
+<Compile Include="Helpers\TranslationAttribute.cs" />
+    <Compile Include="Helpers\WorkFolderUtils.cs" />
+    <Compile Include="Helpers\AccessUtils.cs" />
+    <Compile Include="Helpers\DahuaMaxDriverReferenceException.cs" />
+    <Compile Include="Helpers\SmartClientEnvironmentUtils.cs" />
+    <Compile Include="Helpers\VlcHelper.cs" />
+    <Compile Include="Helpers\CefSharpHelper.cs" />
+    <Compile Include="Helpers\CloneClass.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DnsHelper.cs" />
+    <Compile Include="Helpers\EnumExtension.cs" />
+    <Compile Include="Helpers\FontHelper.cs" />
+    <Compile Include="Helpers\FormAnimator.cs" />
+    <Compile Include="Helpers\Icons.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\MediaSuiteHelper.cs" />
+    <Compile Include="Helpers\NativeMethods.cs" />
+    <Compile Include="Helpers\PathUtils.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\Threads.cs" />
+    <Compile Include="Helpers\WorkFolderUtils.cs" />
+    <Compile Include="IAppContainer.cs" />
+    <Compile Include="ISmartNotification.cs" />
+    <Compile Include="Helpers\Security.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\FileResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FileResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.en-US.Designer.cs">
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.es-ES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es-ES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.es-MX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es-MX.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\VariableResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VariableResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reflections\Drivers\Dahua\NetSDK.cs" />
+    <Compile Include="Reflections\Drivers\Dahua\NetSDKStruct.cs" />
+    <Compile Include="Reflections\Drivers\Dahua\OriginalSDK.cs" />
+    <Compile Include="Reflections\Manufactures\DahuaGenericUri.cs" />
+    <Compile Include="Reflections\Drivers\Uniview\NETSDKHelper.cs" />
+    <Compile Include="Reflections\Manufactures\ElipgoUri.cs" />
+    <Compile Include="Reflections\Manufactures\GenericUri.cs" />
+    <Compile Include="Reflections\Manufactures\PanasonicUri.cs" />
+    <Compile Include="Reflections\Manufactures\DahuaUri.cs" />
+    <Compile Include="Reflections\Manufactures\HikvisionUri.cs" />
+    <Compile Include="Reflections\Manufactures\Recording.cs" />
+    <Compile Include="Reflections\Manufactures\UniviewUri.cs" />
+    <Compile Include="Reflections\Manufactures\Vrec5Uri.cs" />
+    <Compile Include="Reflections\Manufactures\VrecUri.cs" />
+    <Compile Include="Reflections\ManufactureUriAbstract.cs" />
+    <Compile Include="Reflections\Manufactures\AxisUri.cs" />
+    <Compile Include="Reflections\ManufactureUriFactory.cs" />
+    <Compile Include="Reflections\IManufactureUri.cs" />
+    <Compile Include="SmartNotification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es-ES.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es-MX.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\VariableResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VariableResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\FileResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>FileResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ColorHelper.cs" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VRec4Service\configuration91.svcinfo" />
+    <None Include="Connected Services\VRec4Service\configuration.svcinfo" />
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_AddCameraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_DeleteCameraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_GetCameraDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_GetCameraFtpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_GetCameraListInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_GetCameraListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_GetCameraScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_SetCameraDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_SetCameraFtpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.CameraConfiguration_SetCameraScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.FileSystem_DeleteVideoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.FileSystem_GetVideoListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.FtpConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.loginSystemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.loginSystemTimeOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.RepositoryBackupConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.RepositoryConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.ScheduleConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.Status.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfig.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_AddRepositoryBackupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_AddRepositoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_DeleteRepositoryBackupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_DeleteRepositoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_GetRepositoryBackupListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_GetRepositoryListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_GetSystemDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.SystemConfiguration_SetSystemDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.UserAdministrator_AddUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.UserAdministrator_DeleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Elipgo.SmartClient.Common.VRec4Service.UserAdministrator_SetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\VRec4Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\VRec4Service\WebServiceConfiguration.wsdl" />
+    <None Include="Resources\Icons\icon-system-monitor.png" />
+    <None Include="Resources\Icons\icon-carruseles.png" />
+    <None Include="app.config" />
+    <None Include="Resources\Icons\icon-play_on.png" />
+    <None Include="Resources\Icons\icon-pause.png" />
+    <None Include="Resources\output.png" />
+    <None Include="Resources\Icons\icon-tool-setting.png" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Fonts\Roboto-Black.ttf" />
+    <None Include="Resources\Fonts\Roboto-BlackItalic.ttf" />
+    <None Include="Resources\Fonts\Roboto-Bold.ttf" />
+    <None Include="Resources\Fonts\Roboto-BoldItalic.ttf" />
+    <None Include="Resources\Fonts\Roboto-Italic.ttf" />
+    <None Include="Resources\Fonts\Roboto-Light.ttf" />
+    <None Include="Resources\Fonts\Roboto-LightItalic.ttf" />
+    <None Include="Resources\Fonts\Roboto-Medium.ttf" />
+    <None Include="Resources\Fonts\Roboto-MediumItalic.ttf" />
+    <None Include="Resources\Fonts\Roboto-Regular.ttf" />
+    <None Include="Resources\Fonts\Roboto-Thin.ttf" />
+    <None Include="Resources\Fonts\Roboto-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Elipgo.SmartClient.EasyTabs\Elipgo.SmartClient.EasyTabs.csproj">
+      <Project>{690BA0F7-D8FE-4EBE-BA39-8058086C7A09}</Project>
+      <Name>Elipgo.SmartClient.EasyTabs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-fullscreen-24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-remove-24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-add-24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_down_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_down_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_up_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PTZ\arrow_up_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-add-plus-button-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-add-plus-button-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-menu-dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\progress.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-alarm-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-carrusel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-kpi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siren-noise.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-device-offline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-input-state-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-input-state-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-iot-input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-iot-output.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-device-online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-device-warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-24-v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-1-more-24-v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2-more-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2-more-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2-more-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2-more-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-2-more-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-3-more-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-3-more-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-3-more-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-3-more-18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grids\grid-9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-bookmarks.png" />
+    <None Include="Resources\Icons\icon-calendar.png" />
+    <None Include="Resources\Icons\icon-lock-24px.png" />
+    <None Include="Resources\loader.gif" />
+    <None Include="Resources\Grids\grid-12-central.png" />
+    <None Include="Resources\Icons\icon-skip_previous.png" />
+    <None Include="Resources\Icons\icon-close.png" />
+    <None Include="Resources\Icons\icon-full-screen.png" />
+    <None Include="Resources\Icons\icon-guards.png" />
+    <None Include="Resources\Icons\icon-play.png" />
+    <None Include="Resources\Icons\icon-rewid.png" />
+    <None Include="Resources\Icons\icon-presets.png" />
+    <None Include="Resources\Icons\icon-ptz.png" />
+    <None Include="Resources\Icons\icon-snapshot.png" />
+    <None Include="Resources\icon-camera.png" />
+    <None Include="Resources\Icons\icon-filter.png" />
+    <None Include="Resources\Icons\icon-search-input.png" />
+    <None Include="Resources\input.png" />
+    <None Include="Resources\ContextBarMain\icon-carousel.png" />
+    <None Include="Resources\ContextBarMain\icon-grids.png" />
+    <None Include="Resources\ContextBarMain\icon-groups.png" />
+    <None Include="Resources\ContextBarMain\icon-scenes.png" />
+    <None Include="Resources\Icons\icon-alert.png" />
+    <None Include="Resources\Icons\icon-visual-search.png" />
+    <None Include="Resources\Icons\icon-logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\VRec4Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ContextBarMain\icon-carousel_white.png" />
+    <None Include="Resources\ContextBarMain\icon-mic_off.png" />
+    <None Include="Resources\ContextBarMain\icon-mic_on.png" />
+    <None Include="Resources\ContextBarMain\icon-notifications_red.png" />
+    <None Include="Resources\ContextBarMain\icon-notifications_red_mute.png" />
+    <None Include="Resources\ContextBarMain\icon-clear_grids.png" />
+    <None Include="Resources\ContextBarMain\icon-home.png" />
+    <None Include="Resources\ContextBarMain\icon-mic_2_off.png" />
+    <None Include="Resources\ContextBarMain\icon-mic_2_on.png" />
+    <None Include="Resources\ContextBarMain\icon-mic_white_on.png" />
+    <None Include="Resources\elipse.png" />
+    <None Include="Resources\icon-camera-offline.png" />
+    <None Include="Resources\icon-camera-online.png" />
+    <None Include="Resources\icon-camera-warning.png" />
+    <None Include="Resources\icon-device-undefined.png" />
+    <None Include="Resources\icon-iot-output-active.png" />
+    <None Include="Resources\icon-iot-output-inactive.png" />
+    <None Include="Resources\icon-kpi-alert.gif" />
+    <None Include="Resources\Icons\icon-alarms_remove.png" />
+    <None Include="Resources\Icons\icon-arrow_dropdown_down-24px.png" />
+    <None Include="Resources\Icons\icon-arrow_dropdown_up-24px.png" />
+    <None Include="Resources\Icons\icon-back-24px.png" />
+    <None Include="Resources\Icons\icon-baseline_left-36px.png" />
+    <None Include="Resources\Icons\icon-baseline_right-36px.png" />
+    <None Include="Resources\Icons\icon-check-24px.png" />
+    <None Include="Resources\Icons\icon-close-18px.png" />
+    <None Include="Resources\Icons\icon-digital_zoom_off-24px.png" />
+    <None Include="Resources\Icons\icon-digital_zoom_off.png" />
+    <None Include="Resources\Icons\icon-digital_zoom_on-24px.png" />
+    <None Include="Resources\Icons\icon-drag_drop_1-24px.png" />
+    <None Include="Resources\Icons\icon-drag_drop_2-24px.png" />
+    <None Include="Resources\Icons\icon-edit-24px.png" />
+    <None Include="Resources\Icons\icon-fast-24px.png" />
+    <None Include="Resources\Icons\icon-folder-24px.png" />
+    <None Include="Resources\Icons\icon-forward-24px.png" />
+    <None Include="Resources\Icons\icon-forward_30-24px.png" />
+    <None Include="Resources\Icons\icon-forward_30.png" />
+    <None Include="Resources\Icons\icon-groups.png" />
+    <None Include="Resources\Icons\icon-group_scale_time-24px.png" />
+    <None Include="Resources\Icons\icon-help-24px.png" />
+    <None Include="Resources\Icons\icon-menus-24px.png" />
+    <None Include="Resources\Icons\icon-menu_black-24px.png" />
+    <None Include="Resources\Icons\icon-mic_off.png" />
+    <None Include="Resources\Icons\icon-mic_on.png" />
+    <None Include="Resources\Icons\icon-minimize-18px.png" />
+    <None Include="Resources\Icons\icon-more-24px.png" />
+    <None Include="Resources\Icons\icon-notifications_off.png" />
+    <None Include="Resources\Icons\icon-outline_file_download_white-36px.png" />
+    <None Include="Resources\Icons\icon-papelera-24px.png" />
+    <None Include="Resources\Icons\icon-pause-24px.png" />
+    <None Include="Resources\Icons\icon-pin-24px.png" />
+    <None Include="Resources\Icons\icon-play-24px.png" />
+    <None Include="Resources\Icons\icon-presets_new-24px.png" />
+    <None Include="Resources\Icons\icon-preview_secuence-24px.png" />
+    <None Include="Resources\Icons\icon-ptz_on.png" />
+    <None Include="Resources\Icons\icon-recorder.png" />
+    <None Include="Resources\Icons\icon-recorder_on.png" />
+    <None Include="Resources\Icons\icon-refresh-24px.png" />
+    <None Include="Resources\Icons\icon-replay_30-24px.png" />
+    <None Include="Resources\Icons\icon-replay_30.png" />
+    <None Include="Resources\Icons\icon-restore-18px.png" />
+    <None Include="Resources\Icons\icon-scenes.png" />
+    <None Include="Resources\Icons\icon-skip_next-24px.png" />
+    <None Include="Resources\Icons\icon-skip_next.png" />
+    <None Include="Resources\Icons\icon-skip_previous-24px.png" />
+    <None Include="Resources\Icons\icon-slow-24px.png" />
+    <None Include="Resources\Icons\icon-sound_off.png" />
+    <None Include="Resources\Icons\icon-sound_on.png" />
+    <None Include="Resources\Icons\icon-topbar_open-24px.png" />
+    <None Include="Resources\Icons\icon-videocam-24px.png" />
+    <None Include="Resources\Icons\icon-view_grid-24px.png" />
+    <None Include="Resources\Icons\icon-view_list-24px.png" />
+    <None Include="Resources\Icons\icon-visibility-24px.png" />
+    <None Include="Resources\Icons\icon-visibility_off-24px.png" />
+    <None Include="Resources\Icons\icon-volume_up-24px.png" />
+    <None Include="Resources\noconnection.png" />
+    <None Include="Resources\PTZ\zoom_in.png" />
+    <None Include="Resources\PTZ\zoom_out.png" />
+    <None Include="Resources\SmartClient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icon-alarms_remove-24px.png" />
+    <None Include="Resources\Icons\icon-bookmarks-24px.png" />
+    <None Include="Resources\Icons\icon-calendar-24px.png" />
+    <None Include="Resources\Icons\icon-carruseles-24px.png" />
+    <None Include="Resources\Icons\icon-close-24px.png" />
+    <None Include="Resources\Icons\icon-digital_zoom_off-white-24px.png" />
+    <None Include="Resources\Icons\icon-filter-24px.png" />
+    <None Include="Resources\Icons\icon-forward_30-white-24px.png" />
+    <None Include="Resources\Icons\icon-fullscreen-white-24px.png" />
+    <None Include="Resources\Icons\icon-grids-24px.png" />
+    <None Include="Resources\Icons\icon-guards-24px.png" />
+    <None Include="Resources\Icons\icon-menu-dots-24px.png" />
+    <None Include="Resources\Icons\icon-mic_off-24px.png" />
+    <None Include="Resources\Icons\icon-mic_on-24px.png" />
+    <None Include="Resources\Icons\icon-notifications_off-24px.png" />
+    <None Include="Resources\Icons\icon-pause-white-24px.png" />
+    <None Include="Resources\Icons\icon-play_white-24px.png" />
+    <None Include="Resources\Icons\icon-ptz_on-24px.png" />
+    <None Include="Resources\Icons\icon-recorder-24px.png" />
+    <None Include="Resources\Icons\icon-recorder_on-24px.png" />
+    <None Include="Resources\Icons\icon-replay_30-white-24px.png" />
+    <None Include="Resources\Icons\icon-save-24px.png" />
+    <None Include="Resources\Icons\icon-search-input-24px.png" />
+    <None Include="Resources\Icons\icon-skip_next-white-24px.png" />
+    <None Include="Resources\Icons\icon-skip_previous-white-24px.png" />
+    <None Include="Resources\Icons\icon-snapshot-24px.png" />
+    <None Include="Resources\Icons\icon-snapshot-white_24px.png" />
+    <None Include="Resources\Icons\icon-sound_off-24px.png" />
+    <None Include="Resources\Icons\icon-sound_on-24px.png" />
+    <None Include="Resources\Icons\icon-switch_videocam_off-24px.png" />
+    <None Include="Resources\Icons\icon-switch_videocam_on-24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\accessLevel1.png" />
+    <Content Include="Resources\accessLevel2.png" />
+    <Content Include="Resources\accessLevel3.png" />
+    <Content Include="Resources\accessLevel4.png" />
+    <Content Include="Resources\accessLevel5.png" />
+    <None Include="Resources\Grids\grid-96.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Sentry.5.0.1\build\Sentry.targets" Condition="Exists('..\packages\Sentry.5.0.1\build\Sentry.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Sentry.5.0.1\build\Sentry.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.5.0.1\build\Sentry.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,1470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Object" xml:space="preserve">
+    <value>Objeto</value>
+  </data>
+  <data name="listOf" xml:space="preserve">
+    <value>Lista de {0}</value>
+  </data>
+  <data name="order" xml:space="preserve">
+    <value>Ordenar</value>
+  </data>
+  <data name="objectName" xml:space="preserve">
+    <value>Nombre del objeto</value>
+  </data>
+  <data name="Grid" xml:space="preserve">
+    <value>Grilla</value>
+  </data>
+  <data name="typeObject" xml:space="preserve">
+    <value>Tipo de objeto</value>
+  </data>
+  <data name="requerid" xml:space="preserve">
+    <value>Este campo es requerido</value>
+  </data>
+  <data name="deleteElementQuestion" xml:space="preserve">
+    <value>¿Quiere eliminar el elemento {0}? </value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="group" xml:space="preserve">
+    <value>Grupos</value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>Campo requerido</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="elementsAvailable" xml:space="preserve">
+    <value>Elementos disponibles</value>
+  </data>
+  <data name="buttonAdd" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="deleteItemsGrid" xml:space="preserve">
+    <value>¿Está seguro que quiere eliminar los elementos seleccionados?</value>
+  </data>
+  <data name="newGroup" xml:space="preserve">
+    <value>Nuevo Grupo</value>
+  </data>
+  <data name="typeGrid" xml:space="preserve">
+    <value>Tipo de grilla</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="scenes" xml:space="preserve">
+    <value>Escenas</value>
+  </data>
+  <data name="newScene" xml:space="preserve">
+    <value>Nueva Escena</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="IotAvailable" xml:space="preserve">
+    <value>IoT disponibles</value>
+  </data>
+  <data name="GlobalAction" xml:space="preserve">
+    <value>Acción Global</value>
+  </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Dispositivos</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Dispositivo</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Acción</value>
+  </data>
+  <data name="newCarousel" xml:space="preserve">
+    <value>Nuevo carrusel</value>
+  </data>
+  <data name="camerasAvailables" xml:space="preserve">
+    <value>Cámaras disponibles</value>
+  </data>
+  <data name="cameras" xml:space="preserve">
+    <value>Cámaras</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="duration" xml:space="preserve">
+    <value>Duración</value>
+  </data>
+  <data name="carousel" xml:space="preserve">
+    <value>Carruseles</value>
+  </data>
+  <data name="elementSelected" xml:space="preserve">
+    <value>Elementos Seleccionados: {0}</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="AddNote" xml:space="preserve">
+    <value>Agregar nota</value>
+  </data>
+  <data name="Alarms" xml:space="preserve">
+    <value>    Ver Alarmas</value>
+  </data>
+  <data name="AlarmState" xml:space="preserve">
+    <value>Estado de la alarma</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todo</value>
+  </data>
+  <data name="Analytics" xml:space="preserve">
+    <value>Analiticos</value>
+  </data>
+  <data name="Blueprints" xml:space="preserve">
+    <value>Planos</value>
+  </data>
+  <data name="BrowserMode" xml:space="preserve">
+    <value>Modo Navegador</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ButtonOK" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="Camera" xml:space="preserve">
+    <value>Cámara</value>
+  </data>
+  <data name="Carousels" xml:space="preserve">
+    <value>Carruseles</value>
+  </data>
+  <data name="DialogGridTitle" xml:space="preserve">
+    <value>Grillas</value>
+  </data>
+  <data name="Face" xml:space="preserve">
+    <value>Face</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
+  <data name="Iot_In" xml:space="preserve">
+    <value>IoT Entrada</value>
+  </data>
+  <data name="Iot_Out" xml:space="preserve">
+    <value>IoT Salida</value>
+  </data>
+  <data name="KPI" xml:space="preserve">
+    <value>KPI</value>
+  </data>
+  <data name="Live" xml:space="preserve">
+    <value>Vivo</value>
+  </data>
+  <data name="LiveMode" xml:space="preserve">
+    <value>Modo Vivo</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Ubicaciones</value>
+  </data>
+  <data name="LPR" xml:space="preserve">
+    <value>LPR</value>
+  </data>
+  <data name="MainStream" xml:space="preserve">
+    <value>Stream Principal</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="PlaybackMode" xml:space="preserve">
+    <value>Modo Grabacion</value>
+  </data>
+  <data name="private" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>Procedimiento</value>
+  </data>
+  <data name="public" xml:space="preserve">
+    <value>Publico</value>
+  </data>
+  <data name="pulseOn05Seconds" xml:space="preserve">
+    <value>Pulsar (0.5 SEG)</value>
+  </data>
+  <data name="pulseOn10Seconds" xml:space="preserve">
+    <value>Pulsar (10 SEG)</value>
+  </data>
+  <data name="pulseOn30Seconds" xml:space="preserve">
+    <value>Pulsar (30 SEG)</value>
+  </data>
+  <data name="pulseOn3Seconds" xml:space="preserve">
+    <value>Pulsar (3 SEG)</value>
+  </data>
+  <data name="SilentAlarms" xml:space="preserve">
+    <value>    Habilitar Sonido</value>
+  </data>
+  <data name="Snapshot" xml:space="preserve">
+    <value>Snapshot</value>
+  </data>
+  <data name="SnapshotSaved" xml:space="preserve">
+    <value>Snapshot Guardado!</value>
+  </data>
+  <data name="SubStream" xml:space="preserve">
+    <value>Stream Secundario</value>
+  </data>
+  <data name="turnOff" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="turnOn" xml:space="preserve">
+    <value>Prender</value>
+  </data>
+  <data name="VideoclipSaved" xml:space="preserve">
+    <value>Videoclip Guardado!</value>
+  </data>
+  <data name="buttonEditSelected" xml:space="preserve">
+    <value>Desde Grilla</value>
+  </data>
+  <data name="ButtonNew" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="Exec" xml:space="preserve">
+    <value>Ejecutar</value>
+  </data>
+  <data name="ExecuteElement" xml:space="preserve">
+    <value>La escena se ha ejecutado correctamente</value>
+  </data>
+  <data name="ExecuteTitle" xml:space="preserve">
+    <value>Ejecución</value>
+  </data>
+  <data name="DuplicateCamera" xml:space="preserve">
+    <value>La cámara {0} ya esta agregada</value>
+  </data>
+  <data name="GenerateBookmark" xml:space="preserve">
+    <value>Generar Bookmark</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="BookmarkCreated" xml:space="preserve">
+    <value>Bookmark Guardado en Vaultl!</value>
+  </data>
+  <data name="preset" xml:space="preserve">
+    <value>Preajustes</value>
+  </data>
+  <data name="guard" xml:space="preserve">
+    <value>Guardias</value>
+  </data>
+  <data name="newGuard" xml:space="preserve">
+    <value>Nueva Guardia</value>
+  </data>
+  <data name="presetAvailable" xml:space="preserve">
+    <value>Preset disponibles</value>
+  </data>
+  <data name="timeSequence" xml:space="preserve">
+    <value>Tiempo entre secuencias</value>
+  </data>
+  <data name="font" xml:space="preserve">
+    <value>Fuente</value>
+  </data>
+  <data name="speed" xml:space="preserve">
+    <value>Velocidad</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="AlarmConfirmed" xml:space="preserve">
+    <value>Alarma confirmada</value>
+  </data>
+  <data name="NotifyUsers" xml:space="preserve">
+    <value>Notificar a los usuarios</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Ver más</value>
+  </data>
+  <data name="ApplyFilter" xml:space="preserve">
+    <value>Aplicar filtro</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando ...</value>
+  </data>
+  <data name="NoPendingAlarms" xml:space="preserve">
+    <value>Sin Alarmas Pendientes</value>
+  </data>
+  <data name="CapacityNotAvailable" xml:space="preserve">
+    <value>Funcionalidad no disponible</value>
+  </data>
+  <data name="VaultMode" xml:space="preserve">
+    <value>Vault Mode</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="Bookmarks" xml:space="preserve">
+    <value>Bookmarks</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="ExportBookmark" xml:space="preserve">
+    <value>Exportar bookmark</value>
+  </data>
+  <data name="Generating" xml:space="preserve">
+    <value>Generando ...</value>
+  </data>
+  <data name="EditBookmark" xml:space="preserve">
+    <value>Editar bookmark</value>
+  </data>
+  <data name="ExportedBookmarks" xml:space="preserve">
+    <value>Bookmarks exportados</value>
+  </data>
+  <data name="NewBookmark" xml:space="preserve">
+    <value>Nuevo bookmark</value>
+  </data>
+  <data name="visualize" xml:space="preserve">
+    <value>Visualizar</value>
+  </data>
+  <data name="edge" xml:space="preserve">
+    <value>Grabador EDGE</value>
+  </data>
+  <data name="vrec" xml:space="preserve">
+    <value>Grabador VREC</value>
+  </data>
+  <data name="Vault_ExportCanceled" xml:space="preserve">
+    <value>Exportacion cancelada</value>
+  </data>
+  <data name="Vault_ExportError" xml:space="preserve">
+    <value>Error en la exportacion</value>
+  </data>
+  <data name="Vault_ExportSuccess" xml:space="preserve">
+    <value>Bookmark {0} exportado</value>
+  </data>
+  <data name="CancelExportsInProcess" xml:space="preserve">
+    <value>¿Cancelar las exportaciones en curso?</value>
+  </data>
+  <data name="WelcomeAlarm" xml:space="preserve">
+    <value>Alarmas</value>
+  </data>
+  <data name="WelcomeFace" xml:space="preserve">
+    <value>Face</value>
+  </data>
+  <data name="WelcomeLive" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="WelcomeLpr" xml:space="preserve">
+    <value>LPR</value>
+  </data>
+  <data name="WelcomePlayback" xml:space="preserve">
+    <value>Playback</value>
+  </data>
+  <data name="WelcomeSeproban" xml:space="preserve">
+    <value>Seproban</value>
+  </data>
+  <data name="WelcomeSmartShop" xml:space="preserve">
+    <value>Analíticas</value>
+  </data>
+  <data name="WelcomeInvoice" xml:space="preserve">
+    <value>Factura</value>
+  </data>
+  <data name="WelcomeVault" xml:space="preserve">
+    <value>Vault</value>
+  </data>
+  <data name="WelcomeVisualSearch" xml:space="preserve">
+    <value>Visual Search</value>
+  </data>
+  <data name="PresetSaved" xml:space="preserve">
+    <value>Preset Guardado: {0}</value>
+  </data>
+  <data name="GuardTourDeleted" xml:space="preserve">
+    <value>Configuracion de guardia eliminada</value>
+  </data>
+  <data name="GuardTourSaved" xml:space="preserve">
+    <value>Guardia configurada</value>
+  </data>
+  <data name="GuardTourStart" xml:space="preserve">
+    <value>Guardia iniciada</value>
+  </data>
+  <data name="GuardTourStop" xml:space="preserve">
+    <value>Guardia detenida</value>
+  </data>
+  <data name="GuardTourDahuaNote" xml:space="preserve">
+    <value>Importante: Por reglamentación de Dahua, no se podrá visualizar los preset guardados previamente en la guardia. En caso de tener alguna duda, puede volver a configurar la guardia.</value>
+  </data>
+  <data name="editGuard" xml:space="preserve">
+    <value>Editar Guardia</value>
+  </data>
+  <data name="WelcomeReport" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="NoRecordingAvailable" xml:space="preserve">
+    <value>{0}: Grabación no disponible</value>
+  </data>
+  <data name="editGroup" xml:space="preserve">
+    <value>Editar Grupo</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmar Contraseña </value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña Actual</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nueva Contraseña</value>
+  </data>
+  <data name="NoMatchPassword" xml:space="preserve">
+    <value>Contraseña no Coincide!</value>
+  </data>
+  <data name="ChangePasswordFail" xml:space="preserve">
+    <value>Contraseña Incorrecta</value>
+  </data>
+  <data name="PassWordChangedSuccessfully" xml:space="preserve">
+    <value>La Contraseña se ha cambiado exitosamente.</value>
+  </data>
+  <data name="FieldRequired" xml:space="preserve">
+    <value>El {0} es requerido</value>
+  </data>
+  <data name="GridTypeRequired" xml:space="preserve">
+    <value>Debe seleccionar un tipo de grilla</value>
+  </data>
+  <data name="GridTypeToDevicesNotEquals" xml:space="preserve">
+    <value>La cantidad de dispositivos seleccionados no coincide con el tipo de grilla</value>
+  </data>
+  <data name="starting" xml:space="preserve">
+    <value>iniciando ...</value>
+  </data>
+  <data name="SiteNoExist" xml:space="preserve">
+    <value>El sitio {0} no está configurado para su usuario.</value>
+  </data>
+  <data name="BookmarkContextBarTitle" xml:space="preserve">
+    <value>Seleccione un Bookmark</value>
+  </data>
+  <data name="BookmarkDeleteConfirm" xml:space="preserve">
+    <value>El bookmark {0} será eliminado. ¿Está seguro?</value>
+  </data>
+  <data name="BookmarkNotSelected" xml:space="preserve">
+    <value>No hay bookmark seleccionado</value>
+  </data>
+  <data name="BookmarkGridTitle" xml:space="preserve">
+    <value>Mis Bookmarks</value>
+  </data>
+  <data name="ExportedBookmarkGridTitle" xml:space="preserve">
+    <value>Mis Bookmarks Exportados</value>
+  </data>
+  <data name="BookmarkSearchVaultBar" xml:space="preserve">
+    <value>Mis Bookmarks</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="sitesText" xml:space="preserve">
+    <value>Sitios</value>
+  </data>
+  <data name="SiteText" xml:space="preserve">
+    <value>Sitio</value>
+  </data>
+  <data name="camerasText" xml:space="preserve">
+    <value>Cámaras</value>
+  </data>
+  <data name="cameraText" xml:space="preserve">
+    <value>Cámara</value>
+  </data>
+  <data name="CloseMainApp" xml:space="preserve">
+    <value>¿Desea cerrar la aplicacion?</value>
+  </data>
+  <data name="BookmarkDeletedSuccess" xml:space="preserve">
+    <value>Bookmark eliminado exitosamente</value>
+  </data>
+  <data name="BookmarkCancel" xml:space="preserve">
+    <value>Cancelar Bookmark</value>
+  </data>
+  <data name="BookmarkExport" xml:space="preserve">
+    <value>Exportar Bookmark</value>
+  </data>
+  <data name="BookmarkExportInProgress" xml:space="preserve">
+    <value>Los siguientes bookmarks están en proceso de exportación y no se pueden eliminar: {0}</value>
+  </data>
+  <data name="BookmarkDeleteError" xml:space="preserve">
+    <value>Ocurrió un error al eliminar el bookmark. Intente nuevamente.</value>
+  </data>
+  <data name="captionConfirmVault" xml:space="preserve">
+    <value>Confirmar guardar como</value>
+  </data>
+  <data name="confirmVault" xml:space="preserve">
+    <value>{0} ya existe.{1}¿Desea reemplazarlo?</value>
+  </data>
+  <data name="WelcomeSuprema" xml:space="preserve">
+    <value>Control de Acceso</value>
+  </data>
+  <data name="FFMpegError" xml:space="preserve">
+    <value>FFMPEG fallo al procesar el archivo {0}</value>
+  </data>
+  <data name="VisualSearchDownloadError" xml:space="preserve">
+    <value>Error al bajar el archivo: {0}</value>
+  </data>
+  <data name="VRecError" xml:space="preserve">
+    <value>Error desconocido</value>
+  </data>
+  <data name="VRecMaximumClientNumbers" xml:space="preserve">
+    <value>Se alcanzó la cantidad máxima de clientes</value>
+  </data>
+  <data name="VRecVideoEmpty" xml:space="preserve">
+    <value>El video solicitado está vacío</value>
+  </data>
+  <data name="VRecVideoNotExists" xml:space="preserve">
+    <value>El video solicitado no existe</value>
+  </data>
+  <data name="VRecAudioDeviceError" xml:space="preserve">
+    <value>No se pudo abrir el dispositivo de audio predeterminado</value>
+  </data>
+  <data name="VRecRemoteConnectionError" xml:space="preserve">
+    <value>Conexión cerrada por host remoto</value>
+  </data>
+  <data name="VRecWaveOutError" xml:space="preserve">
+    <value>No se pudo inicializar WaveOut</value>
+  </data>
+  <data name="VRecOnPaintError" xml:space="preserve">
+    <value>Error durante el procesamiento del video</value>
+  </data>
+  <data name="BookmarkHoraActual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="BookmarkHoraFin" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="Seproban_lblMsg1" xml:space="preserve">
+    <value>Sucursales:</value>
+  </data>
+  <data name="Seproban_lblMsg10" xml:space="preserve">
+    <value>Decodificando secuencia...</value>
+  </data>
+  <data name="Seproban_lblMsg11" xml:space="preserve">
+    <value>Generando secuencia. Por favor espere...</value>
+  </data>
+  <data name="Seproban_lblMsg12" xml:space="preserve">
+    <value>Ha ocurrido un error en la descarga. La secuencia de video que desea no existe</value>
+  </data>
+  <data name="Seproban_lblMsg13" xml:space="preserve">
+    <value>¡Error!</value>
+  </data>
+  <data name="Seproban_lblMsg14" xml:space="preserve">
+    <value>Ha ocurrido un error en la descarga. Es posible que la configuración del servidor sea incorrecta</value>
+  </data>
+  <data name="Seproban_lblMsg15" xml:space="preserve">
+    <value>Ha ocurrido un error en la descarga de la secuencia. puede que el servidor este inactivo o no exista</value>
+  </data>
+  <data name="Seproban_lblMsg16" xml:space="preserve">
+    <value>La secuencia que desea ya ha sido descargada</value>
+  </data>
+  <data name="Seproban_lblMsg17" xml:space="preserve">
+    <value>Ha ocurrido un error de conexión al intentar descargar los datos de las cámaras</value>
+  </data>
+  <data name="Seproban_lblMsg18" xml:space="preserve">
+    <value>Generando secuencia según norma Seproban.</value>
+  </data>
+  <data name="Seproban_lblMsg19" xml:space="preserve">
+    <value>Generando secuencia...</value>
+  </data>
+  <data name="Seproban_lblMsg2" xml:space="preserve">
+    <value>Minutos posteriores:</value>
+  </data>
+  <data name="Seproban_lblMsg20" xml:space="preserve">
+    <value>Secuencia de frames lista para envío a Seproban.</value>
+  </data>
+  <data name="Seproban_lblMsg21" xml:space="preserve">
+    <value>Secuencia lista...</value>
+  </data>
+  <data name="Seproban_lblMsg22" xml:space="preserve">
+    <value>La descarga y generación de la secuencia de video ha sido cancelada</value>
+  </data>
+  <data name="Seproban_lblMsg23" xml:space="preserve">
+    <value>Proceso cancelado...</value>
+  </data>
+  <data name="Seproban_lblMsg24" xml:space="preserve">
+    <value>No ha sido posible continuar con el envío de la secuencia. Revise el estado de la conexión e inténtelo nuevamente.</value>
+  </data>
+  <data name="Seproban_lblMsg25" xml:space="preserve">
+    <value>No existe la secuencia que intenta enviar a Seproban. Intente con otro directorio.</value>
+  </data>
+  <data name="Seproban_lblMsg26" xml:space="preserve">
+    <value>Secuencia enviada...</value>
+  </data>
+  <data name="Seproban_lblMsg27" xml:space="preserve">
+    <value>Secuencia enviada satisfactoriamente.</value>
+  </data>
+  <data name="Seproban_lblMsg28" xml:space="preserve">
+    <value>Salvando secuencia enviada.</value>
+  </data>
+  <data name="Seproban_lblMsg29" xml:space="preserve">
+    <value>Secuencia salvada...</value>
+  </data>
+  <data name="Seproban_lblMsg3" xml:space="preserve">
+    <value>Listo.</value>
+  </data>
+  <data name="Seproban_lblMsg30" xml:space="preserve">
+    <value>Seleccione una sucursal válida</value>
+  </data>
+  <data name="Seproban_lblMsg31" xml:space="preserve">
+    <value>Descargando secuencia del grabador... Esta operación puede tardar!</value>
+  </data>
+  <data name="Seproban_lblMsg32" xml:space="preserve">
+    <value>Descargando secuencia...</value>
+  </data>
+  <data name="Seproban_lblMsg33" xml:space="preserve">
+    <value>Seleccione el video a abrir.</value>
+  </data>
+  <data name="Seproban_lblMsg34" xml:space="preserve">
+    <value>Enviando secuencia seleccionada a Seproban.</value>
+  </data>
+  <data name="Seproban_lblMsg35" xml:space="preserve">
+    <value>Enviando secuencia...</value>
+  </data>
+  <data name="Seproban_lblMsg36" xml:space="preserve">
+    <value>Detener envío de secuencia anterior</value>
+  </data>
+  <data name="Seproban_lblMsg37" xml:space="preserve">
+    <value>Envío de secuencia anterior interrumpido por el usuario.</value>
+  </data>
+  <data name="Seproban_lblMsg38" xml:space="preserve">
+    <value>Envío cancelado...</value>
+  </data>
+  <data name="Seproban_lblMsg39" xml:space="preserve">
+    <value>Enviando secuencia de video a Seproban... Esta operación puede tardar!</value>
+  </data>
+  <data name="Seproban_lblMsg4" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Seproban_lblMsg5" xml:space="preserve">
+    <value>Enviar secuencia anterior</value>
+  </data>
+  <data name="Seproban_lblMsg6" xml:space="preserve">
+    <value>Enviar a Seproban</value>
+  </data>
+  <data name="Seproban_lblMsg7" xml:space="preserve">
+    <value>Ha ocurrido un error en la carga de los datos de las sucursales y la aplicación debe detenerse. La fuente de datos no existe o está siendo modificada en este momento.</value>
+  </data>
+  <data name="Seproban_lblMsg8" xml:space="preserve">
+    <value>Secuencia de video descargada del grabador.</value>
+  </data>
+  <data name="Seproban_lblMsg9" xml:space="preserve">
+    <value>Decodificando frames... Esta operación puede tardar!</value>
+  </data>
+  <data name="DownloadManualFail" xml:space="preserve">
+    <value>Manual no encontrado</value>
+  </data>
+  <data name="DownloadManual" xml:space="preserve">
+    <value>Descargar Manual de Usuario</value>
+  </data>
+  <data name="Geomap" xml:space="preserve">
+    <value>Geolocalizacion</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Mapas</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="showgrid" xml:space="preserve">
+    <value>Mostrar grilla</value>
+  </data>
+  <data name="CameraNoName" xml:space="preserve">
+    <value>Cámara sin nombre </value>
+  </data>
+  <data name="MyDownloads" xml:space="preserve">
+    <value>Mis descargas...</value>
+  </data>
+  <data name="MsgDownloadFolderFail" xml:space="preserve">
+    <value>La carpeta de Descargas no está disponible. Detalle:</value>
+  </data>
+  <data name="lblTypeGroup" xml:space="preserve">
+    <value>Sitio</value>
+  </data>
+  <data name="JoystickSetting" xml:space="preserve">
+    <value>Configuración de joystick</value>
+  </data>
+  <data name="GridNotSelect" xml:space="preserve">
+    <value>Debe seleccionar al menos un tipo de grilla</value>
+  </data>
+  <data name="NoGuardAvailable" xml:space="preserve">
+    <value>La cámara {0}  no tiene la guardia seleccionada configurada.</value>
+  </data>
+  <data name="NoPresetAvailable" xml:space="preserve">
+    <value>La cámara {0}  no tiene el preajuste seleccionada configurado.</value>
+  </data>
+  <data name="GuardErrorActivate" xml:space="preserve">
+    <value>Error de activación de guardia.</value>
+  </data>
+  <data name="PresetExecuted" xml:space="preserve">
+    <value>Preset ejecutado</value>
+  </data>
+  <data name="PresetErrorActivate" xml:space="preserve">
+    <value>Error de activación de Preset.</value>
+  </data>
+  <data name="PresetStarted" xml:space="preserve">
+    <value>Preset {0} Iniciado.</value>
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Nombre del dispositivo</value>
+  </data>
+  <data name="RecorderName" xml:space="preserve">
+    <value>Grabador</value>
+  </data>
+  <data name="SiteName" xml:space="preserve">
+    <value>Sitio</value>
+  </data>
+  <data name="WelcomeSecondView" xml:space="preserve">
+    <value>Second View</value>
+  </data>
+  <data name="NoJoystickConnected" xml:space="preserve">
+    <value>Joystick no conectado</value>
+  </data>
+  <data name="WelcomeCRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="CannotAccessFile" xml:space="preserve">
+    <value>El proceso no puede obtener acceso al archivo, porque está siendo utilizado en otro proceso.</value>
+  </data>
+  <data name="MessageBokmark" xml:space="preserve">
+    <value>La fecha y hora de fin del bookmark es superior a la fecha y hora actual, por lo tanto no podemos proceder con la exportación del video. ¿Desea que modifiquemos la fecha y hora fin del bookmark automáticamente a la fecha y hora actual para exportarlo?</value>
+  </data>
+  <data name="captionConfirmBookmark" xml:space="preserve">
+    <value>Confirmación</value>
+  </data>
+  <data name="NameTabAlarm" xml:space="preserve">
+    <value>Alarmas</value>
+  </data>
+  <data name="SmartProcessDuplicated" xml:space="preserve">
+    <value>Existe una instancia de SmartClient ejecutandose, desea cerrar la misma y continuar con la actual?</value>
+  </data>
+  <data name="WelcomeZkteco" xml:space="preserve">
+    <value>Zkteco</value>
+  </data>
+  <data name="WelcomeAccessControl" xml:space="preserve">
+    <value>Control de Acceso</value>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>SyncroBack</value>
+  </data>
+  <data name="SliderEnded" xml:space="preserve">
+    <value>Alcanzo el maximo de la grabacion</value>
+  </data>
+  <data name="ErrorSelectedTypeGrilla" xml:space="preserve">
+    <value>El número de elementos es mayor a los elementos de la grilla seleccionada.</value>
+  </data>
+  <data name="DateStartEndError" xml:space="preserve">
+    <value>La hora de inicio debe ser mayor que la hora de finalización.</value>
+  </data>
+  <data name="DiscardAllAlarms" xml:space="preserve">
+    <value>Quiere descartar todas las alarmas? </value>
+  </data>
+  <data name="DownloadLogs" xml:space="preserve">
+    <value>Descargar logs</value>
+  </data>
+  <data name="AlarmsGeo" xml:space="preserve">
+    <value>Alarmas Sitio</value>
+  </data>
+  <data name="AlarmsMap" xml:space="preserve">
+    <value>Alarmas Geo</value>
+  </data>
+  <data name="TextToggle" xml:space="preserve">
+    <value>Silenciar alarmas</value>
+  </data>
+  <data name="TitleAlarm" xml:space="preserve">
+    <value>Alarmas</value>
+  </data>
+  <data name="ShowAlarm" xml:space="preserve">
+    <value>Ver alarma</value>
+  </data>
+  <data name="ViewAll" xml:space="preserve">
+    <value>Ver Todas</value>
+  </data>
+  <data name="EmptyNotifications" xml:space="preserve">
+    <value>Por el momento no tienes notificaciones</value>
+  </data>
+  <data name="BookmarksDeleteConfirm" xml:space="preserve">
+    <value>Los bookmarks {0} serán eliminados. ¿Está seguro?</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Esperando...</value>
+  </data>
+  <data name="JoystickTitleCOM" xml:space="preserve">
+    <value>Puerto Serial</value>
+  </data>
+  <data name="JoystickTitleUSB" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="JoystickConnected" xml:space="preserve">
+    <value>Joystick Conectado</value>
+  </data>
+  <data name="DidNotSelectGrid" xml:space="preserve">
+    <value>Por favor seleccione un elemento de la grilla</value>
+  </data>
+  <data name="NumberOutOfRange" xml:space="preserve">
+    <value>El número que ingreso se encuentra fuera del rango permitido</value>
+  </data>
+  <data name="FolderBrowser" xml:space="preserve">
+    <value>Carpeta de descargas</value>
+  </data>
+  <data name="FolderBrowserConfirm" xml:space="preserve">
+    <value>¿Desea cambiar la ruta de descarga a la siguiente:</value>
+  </data>
+  <data name="FolderBrowserSuccess" xml:space="preserve">
+    <value>Se actualizó la ruta de descarga de manera exitosa.</value>
+  </data>
+  <data name="WelcomeAvl" xml:space="preserve">
+    <value>AVL</value>
+  </data>
+  <data name="WelcomeSyncroBack" xml:space="preserve">
+    <value>SyncroBack</value>
+  </data>
+  <data name="DeviceStatus" xml:space="preserve">
+    <value>Estado de los dispositivos</value>
+  </data>
+  <data name="DeviceStatusConfirm" xml:space="preserve">
+    <value>¿Desea cambiar el parámetro para visualizar el estado de los dispositivos?</value>
+  </data>
+  <data name="DeviceStatusSuccess" xml:space="preserve">
+    <value>Se actualizó el parámetro para visualizar el estado de los dispositivos de forma exitosa.</value>
+  </data>
+  <data name="ContainsNoItemsAvailable" xml:space="preserve">
+    <value>La grilla no contiene espacios disponibles</value>
+  </data>
+  <data name="PasswordAlreadyUsed" xml:space="preserve">
+    <value>No se pudo cambiar la contraseña: Esa contraseña ya fue utilizada, ingrese una diferente.</value>
+  </data>
+  <data name="SelectElement" xml:space="preserve">
+    <value>Por favor seleccione un elemento</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="limitFullScreen" xml:space="preserve">
+    <value>Se alcanzó la cantidad máxima de ventanas en pantalla completa.</value>
+  </data>
+  <data name="limitInstantPlayback" xml:space="preserve">
+    <value>Se alcanzó la cantidad máxima de ventanas de reproducción instantánea.</value>
+  </data>
+  <data name="WelcomeCAD" xml:space="preserve">
+    <value>CAD</value>
+  </data>
+  <data name="WelcomeOcr" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="DescriptionDownload" xml:space="preserve">
+    <value>Ubicación de descarga actual</value>
+  </data>
+  <data name="AlarmHistory" xml:space="preserve">
+    <value>Historial de Alarmas</value>
+  </data>
+  <data name="WantRetrieveAlarms" xml:space="preserve">
+    <value>¿Quieres recuperar esta alarma?</value>
+  </data>
+  <data name="DateAttended" xml:space="preserve">
+    <value>Fecha de atención:</value>
+  </data>
+  <data name="RecoveredPeriod" xml:space="preserve">
+    <value>El periodo de recuperación es de {0} min.</value>
+  </data>
+  <data name="UserAttended" xml:space="preserve">
+    <value>Usuario que atendio:</value>
+  </data>
+  <data name="GroupWhitOutElements" xml:space="preserve">
+    <value>El {0} seleccionado no tiene elementos</value>
+  </data>
+  <data name="ResourceMonitor" xml:space="preserve">
+    <value>Monitor de Recursos</value>
+  </data>
+  <data name="SnapshotsByHour" xml:space="preserve">
+    <value>Snapshots por hora</value>
+  </data>
+  <data name="SnapshotsByMinute" xml:space="preserve">
+    <value>Snapshots por minuto</value>
+  </data>
+  <data name="SnapshotsBySecond" xml:space="preserve">
+    <value>Snapshots por segundo</value>
+  </data>
+  <data name="CustomSettings" xml:space="preserve">
+    <value>Ajustes personalizados</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="AlarmsQuickView" xml:space="preserve">
+    <value>Vista rápida de alarmas</value>
+  </data>
+  <data name="CustomSettingsMsg" xml:space="preserve">
+    <value>La nueva configuración se aplicará al volver a iniciar Smart Client</value>
+  </data>
+  <data name="DisplayAutomatically" xml:space="preserve">
+    <value>Mostrar automáticamente</value>
+  </data>
+  <data name="Elements" xml:space="preserve">
+    <value>Elementos</value>
+  </data>
+  <data name="TextZoom10Min" xml:space="preserve">
+    <value>10 Min</value>
+  </data>
+  <data name="TextZoom15Min" xml:space="preserve">
+    <value>15 Min</value>
+  </data>
+  <data name="TextZoom5Min" xml:space="preserve">
+    <value>5 Min</value>
+  </data>
+  <data name="TextZoomNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="WelcomeFortigate" xml:space="preserve">
+    <value>Fortigate</value>
+  </data>
+  <data name="AccessLevelRevoked" xml:space="preserve">
+    <value>Nivel de acceso revocado</value>
+  </data>
+  <data name="AccessLevelRevokedMsg" xml:space="preserve">
+    <value>El nivel de acceso del usuario ha sido revocado</value>
+  </data>
+  <data name="OutOfHours" xml:space="preserve">
+    <value>Fuera de horario</value>
+  </data>
+  <data name="OutOfHoursMsg" xml:space="preserve">
+    <value>El uso de la aplicación esta fuera de horario</value>
+  </data>
+  <data name="CarouselText" xml:space="preserve">
+    <value>Carrusel inactivo. Todas las cámaras en grilla</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Abortar</value>
+  </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Ignorar</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Reintentar</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Reproducir</value>
+  </data>
+  <data name="ShowFolder" xml:space="preserve">
+    <value>Mostrar en carpeta</value>
+  </data>
+  <data name="AddObservation" xml:space="preserve">
+    <value>Ingrese observación</value>
+  </data>
+  <data name="ShowMaps" xml:space="preserve">
+    <value>Mostrar mapas</value>
+  </data>
+  <data name="ButtonClose" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="CalendarRecordingList" xml:space="preserve">
+    <value>Listado de grabaciones</value>
+  </data>
+  <data name="CalendarRecordsLabel" xml:space="preserve">
+    <value>Seleccione un día y una cámara</value>
+  </data>
+  <data name="CalendarStartLabel" xml:space="preserve">
+    <value>Hora inicio grabación</value>
+  </data>
+  <data name="TimelineScale" xml:space="preserve">
+    <value>Escala tiempo</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Cambiar de idioma</value>
+  </data>
+  <data name="Diagnose" xml:space="preserve">
+    <value>Diagnosticar  </value>
+  </data>
+  <data name="Discard" xml:space="preserve">
+    <value>Descartar </value>
+  </data>
+  <data name="DiscardAll" xml:space="preserve">
+    <value>Descartar Todas</value>
+  </data>
+  <data name="Motive" xml:space="preserve">
+    <value>Motivo del descarte</value>
+  </data>
+  <data name="ShowMap" xml:space="preserve">
+    <value>Mostrar mapa</value>
+  </data>
+  <data name="WarningCarousel" xml:space="preserve">
+    <value>* Debe de seleccionar más de una cámara para poder crear el carrusel</value>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Alarma</value>
+  </data>
+  <data name="TitleApp" xml:space="preserve">
+    <value>SmartClient</value>
+  </data>
+  <data name="Vault Mode" xml:space="preserve">
+    <value>Vault Mode</value>
+  </data>
+  <data name="SearchVault" xml:space="preserve">
+    <value>No se encontraron resultados.</value>
+  </data>
+  <data name="SubStream2" xml:space="preserve">
+    <value>Stream Secundario (2)</value>
+  </data>
+  <data name="SubStream3" xml:space="preserve">
+    <value>Stream Secundario (3)</value>
+  </data>
+  <data name="WelcomeDAC" xml:space="preserve">
+    <value>Control de Acceso Dahua</value>
+  </data>
+  <data name="Stream" xml:space="preserve">
+    <value>Stream</value>
+  </data>
+  <data name="EditCarousel" xml:space="preserve">
+    <value>Editar carrusel</value>
+  </data>
+  <data name="ShowToolbar" xml:space="preserve">
+    <value>Mostrar barra herramientas</value>
+  </data>
+  <data name="AccessLevel" xml:space="preserve">
+    <value>Nivel Acceso</value>
+  </data>
+  <data name="BitRate" xml:space="preserve">
+    <value>Ancho de banda</value>
+  </data>
+  <data name="MessageBookmarkVideo" xml:space="preserve">
+    <value>Grabación no disponible en este dispositivo. Por favor intente descargar nuevamente</value>
+  </data>
+  <data name="AlarmDetected" xml:space="preserve">
+    <value>Alarma detectada</value>
+  </data>
+  <data name="ApplyButton" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="MessageJoystick" xml:space="preserve">
+    <value>Es necesario tener conectado un dispositivo joystick para acceder a la configuración.</value>
+  </data>
+  <data name="WelcomeClientManager" xml:space="preserve">
+    <value>Client Manager</value>
+  </data>
+  <data name="BookmarkNameError" xml:space="preserve">
+    <value>El nombre no puede estar vacío ni contener caracteres especiales.</value>
+  </data>
+  <data name="StartDateError" xml:space="preserve">
+    <value>La fecha de inicio no puede ser mayor a la fecha de fin</value>
+  </data>
+  <data name="EndDateError" xml:space="preserve">
+    <value>La fecha de fin no puede ser menor a la fecha de inicio.</value>
+  </data>
+  <data name="DurationError" xml:space="preserve">
+    <value>La duración no puede ser mayor a 24 horas.</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>Automatico</value>
+  </data>
+  <data name="ABANDONED_OBJECT" xml:space="preserve">
+    <value>Detección de objeto abandonado</value>
+  </data>
+  <data name="CROWD_DENSITY" xml:space="preserve">
+    <value>Densidad de personas</value>
+  </data>
+  <data name="FACE_DETECTION" xml:space="preserve">
+    <value>Deteccion de Rostro</value>
+  </data>
+  <data name="MOTION_DETECTION_HUMAN_VEHICLE" xml:space="preserve">
+    <value>Permanencia de vehÍculo</value>
+  </data>
+  <data name="OPEN_DOOR" xml:space="preserve">
+    <value>Detección de puerta abierta</value>
+  </data>
+  <data name="PEOPLE_COUNTING" xml:space="preserve">
+    <value>Conteo de Personas</value>
+  </data>
+  <data name="PERMANENCE_PEOPLE" xml:space="preserve">
+    <value>Permanencia de Personas</value>
+  </data>
+  <data name="TRIPWIRE" xml:space="preserve">
+    <value>Cruce de Linea</value>
+  </data>
+  <data name="WEAPON_DETECTION" xml:space="preserve">
+    <value>Detección de Arma</value>
+  </data>
+  <data name="BODY_POSITION" xml:space="preserve">
+    <value>Posición de Cuerpo</value>
+  </data>
+  <data name="ACCESS_CONTROL" xml:space="preserve">
+    <value>Control de Acceso</value>
+  </data>
+  <data name="AIR_QUALITY" xml:space="preserve">
+    <value>Calidad del Aire</value>
+  </data>
+  <data name="AVL" xml:space="preserve">
+    <value>Avl</value>
+  </data>
+  <data name="CROSSING_VIRTUAL_FENCE" xml:space="preserve">
+    <value>Intrusión en perímetro virtual</value>
+  </data>
+  <data name="CROWD_GATHERING" xml:space="preserve">
+    <value>Aglomeración de Personas</value>
+  </data>
+  <data name="CROWD_GATHERING_ESTIMATION" xml:space="preserve">
+    <value>Estimación de aglomeración de personas</value>
+  </data>
+  <data name="DIGITAL_INPUT" xml:space="preserve">
+    <value>Activación de Alarma Local</value>
+  </data>
+  <data name="DIRECTION" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="ENTER_EXIT" xml:space="preserve">
+    <value>Entrada / Salida</value>
+  </data>
+  <data name="Evento_Suprema" xml:space="preserve">
+    <value>Evento Suprema</value>
+  </data>
+  <data name="FACE_ANALYTICS" xml:space="preserve">
+    <value>Detección de Rostro</value>
+  </data>
+  <data name="FACE_RECOGNITION" xml:space="preserve">
+    <value>Reconocimiento facial</value>
+  </data>
+  <data name="Generic_Alert" xml:space="preserve">
+    <value>Alerta</value>
+  </data>
+  <data name="GPS" xml:space="preserve">
+    <value>GPS</value>
+  </data>
+  <data name="HUMIDITY" xml:space="preserve">
+    <value>Humedad</value>
+  </data>
+  <data name="IMPACT" xml:space="preserve">
+    <value>Impacto</value>
+  </data>
+  <data name="INPUTS" xml:space="preserve">
+    <value>Inputs</value>
+  </data>
+  <data name="INPUT_LOCAL_ALARM" xml:space="preserve">
+    <value>Alarma Local</value>
+  </data>
+  <data name="INPUT_RESTORE" xml:space="preserve">
+    <value>Alarma local restablecida</value>
+  </data>
+  <data name="INPUT_RESTORES" xml:space="preserve">
+    <value>Input Restore</value>
+  </data>
+  <data name="INTRUSION" xml:space="preserve">
+    <value>Área de detección</value>
+  </data>
+  <data name="KPI_AIR_QUALITY" xml:space="preserve">
+    <value>KPI de Calidad del Aire</value>
+  </data>
+  <data name="KPI_AIR_QUALITY_INSTANT" xml:space="preserve">
+    <value>KPI de Calidad del Aire instantánea</value>
+  </data>
+  <data name="KPI_AIR_QUALITY_PEAK" xml:space="preserve">
+    <value>KPI de Pico de Calidad del Aire</value>
+  </data>
+  <data name="KPI_HUMIDITY" xml:space="preserve">
+    <value>Kpi de Humedad</value>
+  </data>
+  <data name="KPI_OCCUPANCY" xml:space="preserve">
+    <value>KPI de ocupación</value>
+  </data>
+  <data name="KPI_QUEUE" xml:space="preserve">
+    <value>Kpi de Tiempo de Fila</value>
+  </data>
+  <data name="KPI_RATE" xml:space="preserve">
+    <value>KPI de Tasa de Conversión</value>
+  </data>
+  <data name="KPI_TEMPERATURE" xml:space="preserve">
+    <value>Kpi de Temperatura</value>
+  </data>
+  <data name="KPI_TEMPERATURE_INSTANT" xml:space="preserve">
+    <value>KPI de temperatura instantánea</value>
+  </data>
+  <data name="KPI_TEMPERATURE_PEAK" xml:space="preserve">
+    <value>KPI de Pico de Temperatura</value>
+  </data>
+  <data name="KPI_VISITORS" xml:space="preserve">
+    <value>Kpi de Visitantes</value>
+  </data>
+  <data name="LEFT_OBJECT" xml:space="preserve">
+    <value>Objeto Abandonado</value>
+  </data>
+  <data name="LOITERING" xml:space="preserve">
+    <value>Detección de Merodeo</value>
+  </data>
+  <data name="LOITERING_DETECTION" xml:space="preserve">
+    <value>Detección de Merodeo</value>
+  </data>
+  <data name="LPR_ALARM" xml:space="preserve">
+    <value>Reconocimiento de Matrículas</value>
+  </data>
+  <data name="MANUFACTURE" xml:space="preserve">
+    <value>Fabricante</value>
+  </data>
+  <data name="MISSING_OBJECT" xml:space="preserve">
+    <value>Objeto Extraviado</value>
+  </data>
+  <data name="MOTION" xml:space="preserve">
+    <value>Detección de Movimiento</value>
+  </data>
+  <data name="MOTION_DETECT" xml:space="preserve">
+    <value>Detección de Movimiento</value>
+  </data>
+  <data name="MOTION_DETECTED" xml:space="preserve">
+    <value>Alerta de Movimiento</value>
+  </data>
+  <data name="MOTION_DETECTION" xml:space="preserve">
+    <value>Detección de Movimiento</value>
+  </data>
+  <data name="MOTION_DETECTION_HUMAN" xml:space="preserve">
+    <value>Movimiento de personas</value>
+  </data>
+  <data name="MOTION_DETECTION_HUMAN_END" xml:space="preserve">
+    <value>Fin de SMD(Humano)</value>
+  </data>
+  <data name="OBJECT_TAKEN" xml:space="preserve">
+    <value>Objeto Sustraído</value>
+  </data>
+  <data name="OCCUPATION_TIME" xml:space="preserve">
+    <value>Permanencia</value>
+  </data>
+  <data name="OCR" xml:space="preserve">
+    <value>Ocr</value>
+  </data>
+  <data name="OFFLINE" xml:space="preserve">
+    <value>Fuera de línea</value>
+  </data>
+  <data name="OPEN_CUSTOM" xml:space="preserve">
+    <value>Apertura</value>
+  </data>
+  <data name="PANIC_BUTTON" xml:space="preserve">
+    <value>Botón de Pánico</value>
+  </data>
+  <data name="PARKING_DETECTION" xml:space="preserve">
+    <value>Detección de Estacionamiento</value>
+  </data>
+  <data name="PROXIMITY" xml:space="preserve">
+    <value>Proximidad</value>
+  </data>
+  <data name="QUEUE" xml:space="preserve">
+    <value>Alerta de Fila</value>
+  </data>
+  <data name="SPEED_DETECTION" xml:space="preserve">
+    <value>Detección de velocidad</value>
+  </data>
+  <data name="TAMPERING" xml:space="preserve">
+    <value>Manipulación</value>
+  </data>
+  <data name="TEMPERATURE" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="VIDEO_CALL" xml:space="preserve">
+    <value>Videollamada</value>
+  </data>
+  <data name="VIDEO_GUARD" xml:space="preserve">
+    <value>Videovigilancia</value>
+  </data>
+  <data name="VIDEO_TAMPERING" xml:space="preserve">
+    <value>Manipulación de video</value>
+  </data>
+  <data name="VIN" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="WATER_DETECTION" xml:space="preserve">
+    <value>Detección de agua</value>
+  </data>
+  <data name="Zkteco" xml:space="preserve">
+    <value>Zkteco</value>
+  </data>
+  <data name="WelcomeSmartEvent" xml:space="preserve">
+    <value>Detección de Eventos</value>
+  </data>
+  <data name="CHANGE_SCENE" xml:space="preserve">
+    <value>Cambio de Escena</value>
+  </data>
+  <data name="FIRE" xml:space="preserve">
+    <value>Detección de fuego</value>
+  </data>
+  <data name="OBJECT_ON_FACE" xml:space="preserve">
+    <value>Objeto en Rostro</value>
+  </data>
+  <data name="EPP" xml:space="preserve">
+    <value>Detección de omisión de EPP</value>
+  </data>
+  <data name="PHONE_DETECTION" xml:space="preserve">
+    <value>Detección de teléfono</value>
+  </data>
+  <data name="registered_Item" xml:space="preserve">
+    <value>El objeto ya se encuentra registrado</value>
+  </data>
+  <data name="ExceedsTabMsg" xml:space="preserve">
+    <value>Se ha alcanzado el límite máximo de {0} pestañas abiertas.</value>
+  </data>
+  <data name="CarouselInactiveCameras" xml:space="preserve">
+    <value>No hay grupos activos para el carrusel.</value>
+  </data>
+  <data name="NoElementSelected" xml:space="preserve">
+    <value>Ningún elemento seleccionado</value>
+  </data>
+  <data name="NoGuard" xml:space="preserve">
+    <value>Camera {0} has no guards.</value>
+  </data>
+  <data name="NoActionInFullScreen" xml:space="preserve">
+    <value>Acción no permitida con la pantalla completa activa.</value>
+  </data>
+  <data name="StopClipBeforeFS" xml:space="preserve">
+    <value>Finalice la grabación del videoclip antes de pasar a pantalla completa.</value>
+  </data>
+  <data name="INPUT" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="WelcomeHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="LastLoginLabel" xml:space="preserve">
+    <value>Tu última conexión exitosa fue:</value>
+  </data>
+  <data name="GenericModalFormLimit" xml:space="preserve">
+    <value>Se alcanzó la cantidad máxima de ventanas de permitidas.</value>
+  </data>
+  <data name="CROUCH_DETECTION" xml:space="preserve">
+    <value>Detección de personas agachadas</value>
+  </data>
+  <data name="BROKEN_GLASS" xml:space="preserve">
+    <value>Detección de vidrios rotos</value>
+  </data>
+  <data name="VANDALIZED_ATM" xml:space="preserve">
+    <value>Detección de ATM vandalizado</value>
+  </data>
+  <data name="VANDALIZED_CAMERA" xml:space="preserve">
+    <value>Detección de cámara vandalizada</value>
+  </data>
+</root>
