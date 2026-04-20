@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ndvr.elipgo.com/vmon" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ndvr.elipgo.com/vmon" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ndvr.elipgo.com/vmon">
+      <s:element name="loginSystemTimeOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timeOut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginSystemTimeOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginSystemTimeOutResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Status">
+        <s:restriction base="s:string">
+          <s:enumeration value="ErrorFileInUse" />
+          <s:enumeration value="ErrorRepositoryMisspelling" />
+          <s:enumeration value="ErrorRepositoryExist" />
+          <s:enumeration value="ErrorRepositoryNotEnoughSpace" />
+          <s:enumeration value="ErrorRepositoryInvalidDriveType" />
+          <s:enumeration value="ErrorFtpStruct" />
+          <s:enumeration value="ErrorSystemStruct" />
+          <s:enumeration value="ErrorScheduleStruct" />
+          <s:enumeration value="ErrorCameraStruct" />
+          <s:enumeration value="ErrorCameraEnable" />
+          <s:enumeration value="ErrorConnection" />
+          <s:enumeration value="AccessDenied" />
+          <s:enumeration value="ErrorFound" />
+          <s:enumeration value="Error" />
+          <s:enumeration value="OK" />
+          <s:enumeration value="AccessSuccess" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="loginSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loginSystemResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logoutSystem">
+        <s:complexType />
+      </s:element>
+      <s:element name="logoutSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="logoutSystemResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserAdministrator_AddUserResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_SetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="coment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_SetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserAdministrator_SetUserResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserAdministrator_DeleteUserResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="checkConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkConnectionResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_GetSystemData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemConfig" type="tns:SystemConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SystemID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MacAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomainName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortService" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortTransfer" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortEvent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortRtsp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxFps" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxPlayerUser" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCamera" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Availability" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReconnectionDeltaT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreAlarmTime" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostAlarmTime" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecycleStyle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeZoneShift" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SmtpMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SmtpUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SmtpPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameServer" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceDiskConstrain" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SystemConfiguration_GetSystemDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_GetSystemDataResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemConfig" type="tns:SystemConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_SetSystemData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemConfig" type="tns:SystemConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_SetSystemDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_SetSystemDataResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemConfig" type="tns:SystemConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_GetRepositoryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfigList" type="tns:ArrayOfRepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRepositoryConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RepositoryConfig" nillable="true" type="tns:RepositoryConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RepositoryConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SystemConfiguration_GetRepositoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_GetRepositoryListResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfigList" type="tns:ArrayOfRepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_AddRepository">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_AddRepositoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_AddRepositoryResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_DeleteRepository">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_DeleteRepositoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_DeleteRepositoryResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_GetRepositoryBackupList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfigList" type="tns:ArrayOfRepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRepositoryBackupConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RepositoryBackupConfig" nillable="true" type="tns:RepositoryBackupConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RepositoryBackupConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quota" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SystemConfiguration_GetRepositoryBackupListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_GetRepositoryBackupListResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfigList" type="tns:ArrayOfRepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_AddRepositoryBackup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_AddRepositoryBackupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_AddRepositoryBackupResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_DeleteRepositoryBackup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_DeleteRepositoryBackupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_DeleteRepositoryBackupResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="repositoryConfig" type="tns:RepositoryBackupConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraIDList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CameraConfiguration_GetCameraListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_GetCameraListResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraIDList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraListInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfigList" type="tns:ArrayOfCameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCameraConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CameraConfig" nillable="true" type="tns:CameraConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CameraConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CameraID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enable" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Host" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortHTTP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortVideo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MacAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VideoChannel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SDK" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeviceType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FrameRate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImageQuality" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Color" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStamp" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecycleMode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecycleStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuotaSize" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AudioQuality" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortAudio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HostProxy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PortProxy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FtpCollect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CameraConfiguration_GetCameraListInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_GetCameraListInfoResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfigList" type="tns:ArrayOfCameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfig" type="tns:CameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_GetCameraDataResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfig" type="tns:CameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfig" type="tns:CameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_SetCameraDataResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="cameraConfig" type="tns:CameraConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_AddCamera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_AddCameraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_AddCameraResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_DeleteCamera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_DeleteCameraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_DeleteCameraResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleConfig" type="tns:ArrayOfScheduleConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfScheduleConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ScheduleConfig" nillable="true" type="tns:ScheduleConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ScheduleConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Day" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StopTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventLabel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FrameRate" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CameraConfiguration_GetCameraScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_GetCameraScheduleResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleConfig" type="tns:ArrayOfScheduleConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="scheduleConfig" type="tns:ArrayOfScheduleConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_SetCameraScheduleResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_GetCameraFtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftpConfig" type="tns:FtpConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FtpConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Host" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Port" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Directory" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Passive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckInterval" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CameraConfiguration_GetCameraFtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_GetCameraFtpResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftpConfig" type="tns:FtpConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraFtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftpConfig" type="tns:FtpConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SetCameraFtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_SetCameraFtpResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftpConfig" type="tns:FtpConfig" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileSystem_GetVideoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="videoList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileSystem_GetVideoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileSystem_GetVideoListResult" type="tns:Status" />
+            <s:element minOccurs="0" maxOccurs="1" name="videoList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileSystem_DeleteVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cameraID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateTimeSTR" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileSystem_DeleteVideoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileSystem_DeleteVideoResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CameraConfiguration_SaveCameraConfiguration">
+        <s:complexType />
+      </s:element>
+      <s:element name="CameraConfiguration_SaveCameraConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CameraConfiguration_SaveCameraConfigurationResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemConfiguration_SaveSystemConfiguration">
+        <s:complexType />
+      </s:element>
+      <s:element name="SystemConfiguration_SaveSystemConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SystemConfiguration_SaveSystemConfigurationResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAdministrator_SaveUserAdministratos">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserAdministrator_SaveUserAdministratosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserAdministrator_SaveUserAdministratosResult" type="tns:Status" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="loginSystemTimeOutSoapIn">
+    <wsdl:part name="parameters" element="tns:loginSystemTimeOut" />
+  </wsdl:message>
+  <wsdl:message name="loginSystemTimeOutSoapOut">
+    <wsdl:part name="parameters" element="tns:loginSystemTimeOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:loginSystem" />
+  </wsdl:message>
+  <wsdl:message name="loginSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:loginSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="logoutSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:logoutSystem" />
+  </wsdl:message>
+  <wsdl:message name="logoutSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:logoutSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_AddUser" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_SetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_SetUser" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_SetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_SetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:checkConnection" />
+  </wsdl:message>
+  <wsdl:message name="checkConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:checkConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetSystemDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetSystemData" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetSystemDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetSystemDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_SetSystemDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_SetSystemData" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_SetSystemDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_SetSystemDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetRepositoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetRepositoryList" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetRepositoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetRepositoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_AddRepositorySoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_AddRepository" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_AddRepositorySoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_AddRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_DeleteRepositorySoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_DeleteRepository" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_DeleteRepositorySoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_DeleteRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetRepositoryBackupListSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetRepositoryBackupList" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_GetRepositoryBackupListSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_GetRepositoryBackupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_AddRepositoryBackupSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_AddRepositoryBackup" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_AddRepositoryBackupSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_AddRepositoryBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_DeleteRepositoryBackupSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_DeleteRepositoryBackup" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_DeleteRepositoryBackupSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_DeleteRepositoryBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraListSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraList" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraListSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraListInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraListInfo" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraListInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraListInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraData" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraData" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_AddCameraSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_AddCamera" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_AddCameraSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_AddCameraResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_DeleteCameraSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_DeleteCamera" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_DeleteCameraSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_DeleteCameraResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraSchedule" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraSchedule" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraFtpSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraFtp" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_GetCameraFtpSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_GetCameraFtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraFtpSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraFtp" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SetCameraFtpSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SetCameraFtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileSystem_GetVideoListSoapIn">
+    <wsdl:part name="parameters" element="tns:FileSystem_GetVideoList" />
+  </wsdl:message>
+  <wsdl:message name="FileSystem_GetVideoListSoapOut">
+    <wsdl:part name="parameters" element="tns:FileSystem_GetVideoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileSystem_DeleteVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:FileSystem_DeleteVideo" />
+  </wsdl:message>
+  <wsdl:message name="FileSystem_DeleteVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:FileSystem_DeleteVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SaveCameraConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SaveCameraConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="CameraConfiguration_SaveCameraConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:CameraConfiguration_SaveCameraConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_SaveSystemConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_SaveSystemConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="SystemConfiguration_SaveSystemConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemConfiguration_SaveSystemConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_SaveUserAdministratosSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_SaveUserAdministratos" />
+  </wsdl:message>
+  <wsdl:message name="UserAdministrator_SaveUserAdministratosSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAdministrator_SaveUserAdministratosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceConfigurationSoap">
+    <wsdl:operation name="loginSystemTimeOut">
+      <wsdl:input message="tns:loginSystemTimeOutSoapIn" />
+      <wsdl:output message="tns:loginSystemTimeOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="loginSystem">
+      <wsdl:input message="tns:loginSystemSoapIn" />
+      <wsdl:output message="tns:loginSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logoutSystem">
+      <wsdl:input message="tns:logoutSystemSoapIn" />
+      <wsdl:output message="tns:logoutSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_AddUser">
+      <wsdl:input message="tns:UserAdministrator_AddUserSoapIn" />
+      <wsdl:output message="tns:UserAdministrator_AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SetUser">
+      <wsdl:input message="tns:UserAdministrator_SetUserSoapIn" />
+      <wsdl:output message="tns:UserAdministrator_SetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_DeleteUser">
+      <wsdl:input message="tns:UserAdministrator_DeleteUserSoapIn" />
+      <wsdl:output message="tns:UserAdministrator_DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkConnection">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check Connection Data Base.</wsdl:documentation>
+      <wsdl:input message="tns:checkConnectionSoapIn" />
+      <wsdl:output message="tns:checkConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetSystemData">
+      <wsdl:input message="tns:SystemConfiguration_GetSystemDataSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_GetSystemDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SetSystemData">
+      <wsdl:input message="tns:SystemConfiguration_SetSystemDataSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_SetSystemDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryList">
+      <wsdl:input message="tns:SystemConfiguration_GetRepositoryListSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_GetRepositoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepository">
+      <wsdl:input message="tns:SystemConfiguration_AddRepositorySoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_AddRepositorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepository">
+      <wsdl:input message="tns:SystemConfiguration_DeleteRepositorySoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_DeleteRepositorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryBackupList">
+      <wsdl:input message="tns:SystemConfiguration_GetRepositoryBackupListSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_GetRepositoryBackupListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepositoryBackup">
+      <wsdl:input message="tns:SystemConfiguration_AddRepositoryBackupSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_AddRepositoryBackupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepositoryBackup">
+      <wsdl:input message="tns:SystemConfiguration_DeleteRepositoryBackupSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_DeleteRepositoryBackupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraList">
+      <wsdl:input message="tns:CameraConfiguration_GetCameraListSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_GetCameraListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraListInfo">
+      <wsdl:input message="tns:CameraConfiguration_GetCameraListInfoSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_GetCameraListInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraData">
+      <wsdl:input message="tns:CameraConfiguration_GetCameraDataSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_GetCameraDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraData">
+      <wsdl:input message="tns:CameraConfiguration_SetCameraDataSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_SetCameraDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_AddCamera">
+      <wsdl:input message="tns:CameraConfiguration_AddCameraSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_AddCameraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_DeleteCamera">
+      <wsdl:input message="tns:CameraConfiguration_DeleteCameraSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_DeleteCameraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraSchedule">
+      <wsdl:input message="tns:CameraConfiguration_GetCameraScheduleSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_GetCameraScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraSchedule">
+      <wsdl:input message="tns:CameraConfiguration_SetCameraScheduleSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_SetCameraScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraFtp">
+      <wsdl:input message="tns:CameraConfiguration_GetCameraFtpSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_GetCameraFtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraFtp">
+      <wsdl:input message="tns:CameraConfiguration_SetCameraFtpSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_SetCameraFtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_GetVideoList">
+      <wsdl:input message="tns:FileSystem_GetVideoListSoapIn" />
+      <wsdl:output message="tns:FileSystem_GetVideoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_DeleteVideo">
+      <wsdl:input message="tns:FileSystem_DeleteVideoSoapIn" />
+      <wsdl:output message="tns:FileSystem_DeleteVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SaveCameraConfiguration">
+      <wsdl:input message="tns:CameraConfiguration_SaveCameraConfigurationSoapIn" />
+      <wsdl:output message="tns:CameraConfiguration_SaveCameraConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SaveSystemConfiguration">
+      <wsdl:input message="tns:SystemConfiguration_SaveSystemConfigurationSoapIn" />
+      <wsdl:output message="tns:SystemConfiguration_SaveSystemConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SaveUserAdministratos">
+      <wsdl:input message="tns:UserAdministrator_SaveUserAdministratosSoapIn" />
+      <wsdl:output message="tns:UserAdministrator_SaveUserAdministratosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceConfigurationSoap" type="tns:WebServiceConfigurationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loginSystemTimeOut">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/loginSystemTimeOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginSystem">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/loginSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logoutSystem">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/logoutSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_AddUser">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SetUser">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_SetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_DeleteUser">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkConnection">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/checkConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetSystemData">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetSystemData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SetSystemData">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_SetSystemData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryList">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetRepositoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepository">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_AddRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepository">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_DeleteRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryBackupList">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetRepositoryBackupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepositoryBackup">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_AddRepositoryBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepositoryBackup">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_DeleteRepositoryBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraList">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraListInfo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraListInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraData">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraData">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_AddCamera">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_AddCamera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_DeleteCamera">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_DeleteCamera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraSchedule">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraSchedule">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraFtp">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraFtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraFtp">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraFtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_GetVideoList">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/FileSystem_GetVideoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_DeleteVideo">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/FileSystem_DeleteVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SaveCameraConfiguration">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SaveCameraConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SaveSystemConfiguration">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_SaveSystemConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SaveUserAdministratos">
+      <soap:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_SaveUserAdministratos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceConfigurationSoap12" type="tns:WebServiceConfigurationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loginSystemTimeOut">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/loginSystemTimeOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginSystem">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/loginSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logoutSystem">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/logoutSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_AddUser">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SetUser">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_SetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_DeleteUser">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkConnection">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/checkConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetSystemData">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetSystemData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SetSystemData">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_SetSystemData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryList">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetRepositoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepository">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_AddRepository" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepository">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_DeleteRepository" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_GetRepositoryBackupList">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_GetRepositoryBackupList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_AddRepositoryBackup">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_AddRepositoryBackup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_DeleteRepositoryBackup">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_DeleteRepositoryBackup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraList">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraListInfo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraListInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraData">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraData">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_AddCamera">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_AddCamera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_DeleteCamera">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_DeleteCamera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraSchedule">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraSchedule">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_GetCameraFtp">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_GetCameraFtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SetCameraFtp">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SetCameraFtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_GetVideoList">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/FileSystem_GetVideoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileSystem_DeleteVideo">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/FileSystem_DeleteVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CameraConfiguration_SaveCameraConfiguration">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/CameraConfiguration_SaveCameraConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemConfiguration_SaveSystemConfiguration">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/SystemConfiguration_SaveSystemConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAdministrator_SaveUserAdministratos">
+      <soap12:operation soapAction="http://ndvr.elipgo.com/vmon/UserAdministrator_SaveUserAdministratos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceConfiguration">
+    <wsdl:port name="WebServiceConfigurationSoap" binding="tns:WebServiceConfigurationSoap">
+      <soap:address location="http://190.111.238.106/WebServiceConfigurationVMonitoring/WebServiceConfiguration.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceConfigurationSoap12" binding="tns:WebServiceConfigurationSoap12">
+      <soap12:address location="http://190.111.238.106/WebServiceConfigurationVMonitoring/WebServiceConfiguration.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
